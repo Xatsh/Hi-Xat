@@ -1,10 +1,7 @@
-import { defineConfig } from 'astro/config'
-import UnoCSS from 'unocss/astro'
+/** @type {import('astro').AstroConfig} */
 
-export default defineConfig({
-  integrations: [
-    UnoCSS({
-      injectReset: true,
-    }),
-  ],
-})
+import tailwind from '@astrojs/tailwind'
+
+export default {
+  integrations: [tailwind()],
+}
