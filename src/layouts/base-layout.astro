@@ -1,4 +1,5 @@
 ---
+import { css } from '@/assets/font/MiSans.ttf'
 import Footer from '@/components/ui/footer.astro'
 import Header from '@/components/ui/header.astro'
 import Meta from '@/components/ui/meta.astro'
@@ -18,6 +19,9 @@ const { description = '✨ Coding with Love, Exploring the World.', title } = As
     <title>{title ? `${title} | Xat` : 'Hi, Xat!'}</title>
   </head>
   <body
+    style={{
+      fontFamily: `${css.family}`,
+    }}
     class="min-h-screen scroll-smooth bg-slate-50 bg-fixed text-slate-950 subpixel-antialiased"
   >
     <Header />
