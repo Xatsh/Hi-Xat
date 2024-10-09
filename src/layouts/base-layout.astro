@@ -1,31 +1,56 @@
 ---
 import Footer from '@/components/ui/footer.astro'
 import Header from '@/components/ui/header.astro'
+import Intro from '@/components/ui/intro.astro'
 import Meta from '@/components/ui/meta.astro'
 
 import '@/assets/style/misans.css'
 
 interface Props {
   description?: string
+  label?: string
   title?: string
 }
 
-const { description = '✨ Coding with Love, Exploring the World.', title } = Astro.props
+const { description = '✨ Coding with Love, Exploring the World.', label, title } = Astro.props
 ---
 
 <!doctype html>
-<html lang="en">
+<html
+  class="scroll-smooth subpixel-antialiased"
+  lang="en"
+>
   <head>
     <Meta description={description} />
     <title>{title ? `${title} | Xat` : 'Hi, Xat!'}</title>
   </head>
   <body
-    class="min-h-screen scroll-smooth bg-slate-50 bg-fixed text-slate-950 subpixel-antialiased"
+    class="flex min-h-screen flex-col bg-[#F5EFDC] text-slate-950 dark:bg-[#1A202C] dark:text-slate-50"
   >
     <Header />
-    <content class="flex flex-col gap-8">
+    <Intro label={label} title={title} />
+    <content class="flex grow flex-col gap-8 rounded-t-xl bg-slate-50 dark:bg-slate-950">
       <slot />
     </content>
     <Footer />
   </body>
 </html>
+
+<script is:inline>
+  const theme = (() => {
+    if (typeof localStorage !== "undefined" && localStorage.getItem("theme")) {
+      return localStorage.getItem("theme");
+    }
+    if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+      return "dark";
+    }
+    return "light";
+  })();
+
+  if (theme === "light") {
+    document.documentElement.classList.remove("dark");
+  } else {
+    document.documentElement.classList.add("dark");
+  }
+  window.localStorage.setItem("theme", theme);
+</script>

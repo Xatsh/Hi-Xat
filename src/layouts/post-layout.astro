@@ -2,18 +2,15 @@
 import Layout from '@/layouts/base-layout.astro'
 
 interface Props {
+  category: string
   publishedAt: Date
-  tags?: string[] | undefined
   title: string
 }
 
-const { title } = Astro.props
+const { category, title } = Astro.props
 ---
 
-<Layout title={title}>
-  <h2
-    class="bg-gradient-to-r from-fuchsia-600 via-orange-600 to-pink-600 bg-clip-text p-6 pt-24 text-4xl font-black leading-loose text-transparent"
-  >{title}</h2>
+<Layout label={category} title={title}>
   <article
     class="prose max-w-none p-6 dark:prose-invert"
   >

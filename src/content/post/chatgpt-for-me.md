@@ -1,22 +1,21 @@
 ---
 title: ChatGPT 使用之旅
-datePublishedAt: 2023-03-04T00:02:34.000Z
+publishedAt: 2023-03-04T00:02:34.000Z
+category: Coding
+lang: zh
 summary: >-
-  Intro. 去年年末开始，逐渐在 Twitter 上见到许多关于 ChatGPT
-  的话题，再体验一段时间过后，仿佛大梦初醒一般，已意识到市面上已经出现许许多多 AI 产品。
+  去年年末开始，逐渐在 Twitter 上见到许多关于 ChatGPT 的话题，再体验一段时间过后，仿佛大梦初醒一般，已意识到市面上已经出现许许多多 AI 产品。
   有早先关注到的 AI 作画 Disco Diffusion…
 slug: chatgpt-for-me
-disableAISummary: false
 cover: ""
 tags:
-  - 🧑‍💻Coding
+  - ChatGPT
+  - AI
 ---
 
-## Intro
+## 1. Intro
 
 去年年末开始，逐渐在 Twitter 上见到许多关于 ChatGPT 的话题，再体验一段时间过后，仿佛大梦初醒一般，已意识到市面上已经出现许许多多 AI 产品。
-
----
 
 有早先关注到的 AI 作画 Disco Diffusion，当时寝室里不关注的室友都下载下来跑一些有意思的图片，当然，这也少不了 AI 作画本身与「二次元」关联甚深的缘故，而我这几名同学的确是「二次元」爱好者。
 
@@ -24,7 +23,7 @@ tags:
 
 以及今天的主角：ChatGPT
 
-## Who is ChatGPT?
+## 2. Who is ChatGPT?
 
 > ChatGPT is a sibling model to [InstructGPT](https://openai.com/blog/instruction-following/)
 , which is trained to follow an instruction in a prompt and provide a detailed response.
@@ -35,7 +34,7 @@ tags:
 
 你可以发挥自己想象，或是使用类似于 <https://github.com/f/awesome-chatgpt-prompts> 中举出的用法来让 ChatGPT 成为你的生产力工具。
 
-## 开始折腾
+## 3. 开始折腾
 
 ### 注册
 
@@ -61,7 +60,7 @@ tags:
 
 如果你想深入了解 ChatGPT 的 API 用法，可以看看官方的文档，更多有意思的用法可以看看官方的 GitHub 项目：<https://github.com/openai/openai-cookbook>
 
-## Outro
+## 4. Outro
 
 现在越来越多的领域都开始涉足 AI，似乎 ChatGPT 为整个行业又探索了一条新的路线，至少同比其他 AI 作品，在我看来 ChatGPT 的宣传、推广和影响力都是惊人的。但这真的是主流方向吗？OpenAI 拒绝开源 ChatGPT 这样似乎违背其创立宗旨的行为又对整个行业有什么影响？
 

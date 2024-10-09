@@ -1,16 +1,13 @@
 ---
 import { getCollection } from 'astro:content'
 
-import Intro from '@/components/intro.astro'
 import Card from '@/components/ui/card.astro'
 import Layout from '@/layouts/base-layout.astro'
-import { dateFormatter } from '@/utils/date-formatter'
 
 const posts = await getCollection('post')
 ---
 <Layout>
-  <Intro />
-  <main class="flex -translate-y-12 flex-col gap-4 rounded-t-xl bg-slate-50 p-6">
+  <main class="flex flex-col gap-4 p-6">
     <div class="flex items-center gap-2 text-lg font-bold">
       <span class="i-mingcute-quill-pen-fill"></span>
       <span class="capitalize">recently published</span>
@@ -19,7 +16,8 @@ const posts = await getCollection('post')
       {
         posts.map(({ data: metaData, slug }) => (
           <Card
-            subtitle={dateFormatter(metaData.datePublishedAt)}
+            description={metaData.summary}
+            label={metaData.category}
             title={metaData.title}
             url={`/post/${slug}`}
           />

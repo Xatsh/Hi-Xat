@@ -1,0 +1,27 @@
+---
+interface Props {
+  label?: string
+  title?: string
+}
+
+const { label, title } = Astro.props
+---
+<section
+  class="flex flex-col gap-4 bg-cover p-6 pt-24 transition-all"
+>
+  <div>
+    <span class="text-2xl text-blue-500">{label ?? '✨'}</span>
+  </div>
+  <div>
+    <h2 class="text-3xl font-bold">{title ?? 'Coding with Love, Exploring the World.'}</h2>
+  </div>
+  <div class="flex items-center gap-4 py-2 text-xl leading-4">
+    {
+      !title && (
+      <a aria-label="GitHub" class="" href="https://github.com/xatloon" target="_blank"><span class="i-mingcute-github-line"></span></a>
+      <a aria-label="Twitter/X" class="" href="https://x.com/xatloon" target="_blank"><span class="i-mingcute-social-x-line"></span></a>
+      <a aria-label="Telegram" class="" href="https://t.me/xatloon" target="_blank"><span class="i-mingcute-telegram-line"></span></a>
+      )
+    }
+  </div>
+</section>
