@@ -25,11 +25,11 @@ const { description = '✨ Coding with Love, Exploring the World.', label, title
     <title>{title ? `${title} | Xat` : 'Hi, Xat!'}</title>
   </head>
   <body
-    class="flex min-h-screen flex-col bg-[#F5EFDC] text-slate-950 dark:bg-[#1A202C] dark:text-slate-50"
+    class="flex min-h-screen flex-col items-center bg-[#F5EFDC] text-slate-950 dark:bg-[#1A202C] dark:text-slate-50"
   >
     <Header />
     <Intro label={label} title={title} />
-    <content class="flex grow flex-col gap-8 rounded-t-xl bg-slate-50 dark:bg-slate-950">
+    <content class="flex w-full grow flex-col gap-8 rounded-t-xl bg-slate-50 dark:bg-slate-950 sm:w-4/5 md:w-2/3">
       <slot />
     </content>
     <Footer />
