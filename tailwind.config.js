@@ -1,5 +1,6 @@
 import { getIconCollections, iconsPlugin as IconsPlugin } from '@egoist/tailwindcss-icons'
 import TypographyPlugin from '@tailwindcss/typography'
+import defaultTheme from 'tailwindcss/defaultTheme'
 
 /** @type {import('tailwindcss').Config} */
 export default {
@@ -11,4 +12,11 @@ export default {
       collections: getIconCollections(['mingcute']),
     }),
   ],
+  theme: {
+    extend: {
+      fontFamily: {
+        sans: ['MiSans', ...defaultTheme.fontFamily.sans],
+      },
+    },
+  },
 }

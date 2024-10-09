@@ -4,6 +4,7 @@ import { getCollection } from 'astro:content'
 import Intro from '@/components/intro.astro'
 import Card from '@/components/ui/card.astro'
 import Layout from '@/layouts/base-layout.astro'
+import { dateFormatter } from '@/utils/date-formatter'
 
 const posts = await getCollection('post')
 ---
@@ -18,7 +19,7 @@ const posts = await getCollection('post')
       {
         posts.map(({ data: metaData, slug }) => (
           <Card
-            subtitle={metaData.datePublishedAt.toString()}
+            subtitle={dateFormatter(metaData.datePublishedAt)}
             title={metaData.title}
             url={`/post/${slug}`}
           />
