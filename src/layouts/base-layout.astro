@@ -40,6 +40,24 @@ const { description = '✨ Coding with Love, Exploring the World.', label, title
 </html>
 
 <style is:global>
+  html {
+    cursor: url(/cursor/default.svg), default;
+    a, button, input[type="button"], input[type="submit"], [role="button"] {
+      cursor: url(/cursor/pointer.svg), pointer;
+    }
+    textarea, input[type="text"], input[type="email"], input[type="search"], input[type="number"] {
+      cursor: url(/cursor/text.svg), text;
+    }
+  }
+  html.dark {
+    cursor: url(/cursor/default_dark.svg), default;
+    a, button, input[type="button"], input[type="submit"], [role="button"] {
+      cursor: url(/cursor/pointer_dark.svg), pointer;
+    }
+    textarea, input[type="text"], input[type="email"], input[type="search"], input[type="number"] {
+      cursor: url(/cursor/text_dark.svg), text;
+    }
+  }
   * {
     @apply selection:bg-primary selection:text-atom dark:selection:bg-primary-dark
   }
