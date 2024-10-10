@@ -1,4 +1,6 @@
 ---
+import { ViewTransitions } from 'astro:transitions'
+
 import Footer from '@/components/ui/footer.astro'
 import Header from '@/components/ui/header.astro'
 import Intro from '@/components/ui/intro.astro'
@@ -22,6 +24,7 @@ const { description = '✨ Coding with Love, Exploring the World.', label, title
 >
   <head>
     <Meta description={description} />
+    <ViewTransitions />
     <title>{title ? `${title} | Xat` : 'Hi, Xat!'}</title>
   </head>
   <body
@@ -71,4 +74,14 @@ const { description = '✨ Coding with Love, Exploring the World.', label, title
   document
     .getElementById("theme-toggle")
     .addEventListener("click", handleToggleClick);
+
+  document.addEventListener("astro:after-swap", () => {
+    if (localStorage.getItem("theme") === "dark")
+      document.documentElement.classList.toggle("dark", true);
+
+    if (!document.getElementById("theme-toggle").hasAttribute("onclick"))
+      document
+        .getElementById("theme-toggle")
+        .addEventListener("click", handleToggleClick);
+  });
 </script>
