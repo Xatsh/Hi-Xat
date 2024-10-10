@@ -36,6 +36,12 @@ const { description = '✨ Coding with Love, Exploring the World.', label, title
   </body>
 </html>
 
+<style is:global>
+  * {
+    @apply selection:bg-primary selection:text-atom dark:selection:bg-primary-dark
+  }
+</style>
+
 <script is:inline>
   const theme = (() => {
     if (typeof localStorage !== "undefined" && localStorage.getItem("theme")) {
