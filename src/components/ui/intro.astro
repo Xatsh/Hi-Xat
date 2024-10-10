@@ -7,10 +7,18 @@ interface Props {
 const { label, title } = Astro.props
 ---
 <section
-  class="flex w-full flex-col gap-4 bg-cover p-6 pt-24 transition-all sm:w-4/5 md:w-2/3"
+  class="flex w-full flex-col gap-4 bg-cover p-6 pt-24 tablet:w-4/5 desktop:w-2/3"
 >
   <div>
-    <span class="text-2xl text-blue-500">{label ?? '✨'}</span>
+    {
+      label
+        ? (
+          <span class="text-2xl text-primary dark:text-primary-dark">{label}</span>
+        )
+        : (
+          <span class="i-mingcute-sparkles-2-fill text-4xl"></span>
+        )
+    }
   </div>
   <div>
     <h2 class="text-3xl font-bold">{title ?? 'Coding with Love, Exploring the World.'}</h2>

@@ -10,20 +10,20 @@ interface Props {
 const { description, label, showRedirect, title, url } = Astro.props;
 ---
 <a href={url} target={showRedirect ? '_blank' : '_self'}>
-  <div class="flex items-center justify-between gap-2 overflow-hidden rounded-xl p-4 ring-2 ring-slate-200 transition-all hover:ring-slate-950 dark:ring-slate-800 dark:hover:ring-slate-50">
+  <div class="flex items-center justify-between gap-2 overflow-hidden rounded-xl border-2 border-decoration p-4 transition-colors hover:border-primary dark:border-decoration-dark dark:hover:border-primary-dark">
     <div class="flex flex-col gap-1">
-      <span class="text-sm text-blue-500">
+      <span class="text-sm text-primary dark:text-primary-dark">
         {label}
       </span>
-      <h3>
+      <h3 class="font-semi">
         {title}
       </h3>
-      <p class="text-sm text-gray-500">
+      <p class="text-sm text-mute">
         {description}
       </p>
     </div>
     {showRedirect && (
-      <span class="i-mingcute-external-link-line text-base text-slate-500"></span>
+      <span class="i-mingcute-external-link-line grow-0 text-decoration dark:text-decoration"></span>
     )}
   </div>
 </a>
