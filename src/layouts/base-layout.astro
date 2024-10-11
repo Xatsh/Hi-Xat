@@ -1,6 +1,4 @@
 ---
-import { ViewTransitions } from 'astro:transitions'
-
 import Footer from '@/components/ui/footer.astro'
 import Header from '@/components/ui/header.astro'
 import Intro from '@/components/ui/intro.astro'
@@ -24,7 +22,6 @@ const { description = '✨ Coding with Love, Exploring the World.', label, title
 >
   <head>
     <Meta description={description} />
-    <ViewTransitions />
     <title>{title ? `${title} | Xat` : 'Hi, Xat!'}</title>
   </head>
   <body
@@ -40,6 +37,13 @@ const { description = '✨ Coding with Love, Exploring the World.', label, title
 </html>
 
 <style is:global>
+  .xat-typo {
+    text-justify: inter-ideograph;
+    text-align: justify;
+    text-wrap: wrap;
+    word-wrap: break-word;
+    word-break: break-all;
+  }
   html {
     cursor: url(/cursor/default.svg), default;
     a, button, input[type="button"], input[type="submit"], [role="button"] {
@@ -59,7 +63,7 @@ const { description = '✨ Coding with Love, Exploring the World.', label, title
     }
   }
   * {
-    @apply selection:bg-primary selection:text-atom dark:selection:bg-primary-dark
+    @apply selection:bg-primary selection:text-atom dark:selection:bg-primary-dark dark:selection:text-atom-dark;
   }
   ::view-transition-group(root) {
     animation-timing-function: linear(
@@ -85,7 +89,7 @@ const { description = '✨ Coding with Love, Exploring the World.', label, title
   }
   @keyframes scale {
     to {
-      mask-size: 200vmax;
+      mask-size: 400vmax;
     }
   }
 </style>
