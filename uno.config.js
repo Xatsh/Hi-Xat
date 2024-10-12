@@ -3,6 +3,48 @@ import { presetIcons, presetTypography, presetUno, presetWebFonts, transformerDi
 /** @type {import('unocss').UserConfig} */
 export default {
   content: ['./src/**/*.{astro,mdx,tsx}'],
+  preflights: [{
+    getCSS: () => `
+      * {
+        @apply 'selection:bg-primary selection:text-atom';
+      }
+      :root {
+        font-family: 'MiSans', sans-serif;
+        cursor: url(/cursor/default.svg), default;
+        a, button, input[type="button"], input[type="submit"], [role="button"] {
+          cursor: url(/cursor/pointer.svg), pointer;
+        }
+        textarea, input[type="text"], input[type="email"], input[type="search"], input[type="number"] {
+          cursor: url(/cursor/text.svg), text;
+        }
+      }
+      :root.dark {
+        cursor: url(/cursor/default_dark.svg), default;
+        a, button, input[type="button"], input[type="submit"], [role="button"] {
+          cursor: url(/cursor/pointer_dark.svg), pointer;
+        }
+        textarea, input[type="text"], input[type="email"], input[type="search"], input[type="number"] {
+          cursor: url(/cursor/text_dark.svg), text;
+        }
+      }
+      ::view-transition-new(root) {
+        mask: url('/switch.svg') top left / 0 no-repeat;
+        mask-origin: top left;
+        animation: scale 1.5s;
+      }
+      ::view-transition-old(root),
+      .dark::view-transition-old(root) {
+        animation: scale 1.5s;
+        z-index: -1;
+        transform-origin: top left;
+      }
+      @keyframes scale {
+        to {
+          mask-size: 400vmax;
+        }
+      }
+    `,
+  }],
   presets: [
     presetWebFonts({
       fonts: {
@@ -19,11 +61,8 @@ export default {
     presetUno(),
     presetTypography({
       cssExtend: {
-        '.dark a': {
-          color: presetUno().theme.colors.sky[400],
-        },
         'a': {
-          color: presetUno().theme.colors.amber[600],
+          color: 'var(---xat-primary)',
         },
         'h1, h2, h3, h4, h5, h6': {
           'margin-top': '0',
@@ -47,23 +86,13 @@ export default {
       tablet: '600px',
     },
     colors: {
-      atom: {
-        dark: presetUno().theme.colors.black,
-        DEFAULT: presetUno().theme.colors.white,
-      },
-      decoration: {
-        dark: presetUno().theme.colors.gray[700],
-        DEFAULT: presetUno().theme.colors.gray[200],
-      },
-      mute: presetUno().theme.colors.slate[500],
-      primary: {
-        dark: presetUno().theme.colors.sky[400],
-        DEFAULT: presetUno().theme.colors.amber[600],
-      },
-      secondary: {
-        dark: presetUno().theme.colors.gray[800],
-        DEFAULT: presetUno().theme.colors.amber[100],
-      },
+      atom: 'var(---xat-atom)',
+      decoration: 'var(---xat-decoration)',
+      glass: 'var(---xat-glass)',
+      major: 'var(---xat-major)',
+      mute: 'var(---xat-mute)',
+      primary: 'var(---xat-primary)',
+      secondary: 'var(---xat-secondary)',
     },
     fontWeight: {
       bold: 700,

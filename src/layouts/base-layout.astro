@@ -6,6 +6,7 @@ import Meta from '@/components/ui/meta.astro'
 
 import '@/assets/style/misans-regular.css'
 import '@/assets/style/misans-bold.css'
+import '@/assets/style/colors.css'
 
 interface Props {
   description?: string
@@ -26,59 +27,16 @@ const { description = '✨ Coding with Love, Exploring the World.', label, title
     <title>{title ? `${title} | Xat` : 'Hi, Xat!'}</title>
   </head>
   <body
-    class="min-h-screen flex flex-col items-center bg-secondary text-atom-dark dark:bg-secondary-dark dark:text-atom"
+    class="text-major min-h-screen flex flex-col items-center bg-secondary"
   >
     <Header />
     <Intro label={label} title={title} />
-    <content class="w-full flex grow flex-col gap-8 rounded-xl bg-atom px-6 py-8 desktop:w-2/3 tablet:w-4/5 dark:bg-atom-dark">
+    <content class="w-full flex grow flex-col gap-8 rounded-xl bg-atom px-6 py-8 desktop:w-2/3 tablet:w-4/5">
       <slot />
     </content>
     <Footer />
   </body>
 </html>
-
-<style>
-  html {
-    cursor: url(/cursor/default.svg), default;
-    a, button, input[type="button"], input[type="submit"], [role="button"] {
-      cursor: url(/cursor/pointer.svg), pointer;
-    }
-    textarea, input[type="text"], input[type="email"], input[type="search"], input[type="number"] {
-      cursor: url(/cursor/text.svg), text;
-    }
-  }
-  html.dark {
-    cursor: url(/cursor/default_dark.svg), default;
-    a, button, input[type="button"], input[type="submit"], [role="button"] {
-      cursor: url(/cursor/pointer_dark.svg), pointer;
-    }
-    textarea, input[type="text"], input[type="email"], input[type="search"], input[type="number"] {
-      cursor: url(/cursor/text_dark.svg), text;
-    }
-  }
-  * {
-    @apply 'selection:bg-primary selection:text-atom dark:selection:bg-primary-dark dark:selection:text-atom-dark';
-  }
-</style>
-
-<style is:global>
-  ::view-transition-new(root) {
-    mask: url('/switch.svg') top left / 0 no-repeat;
-    mask-origin: top left;
-    animation: scale 1.5s;
-  }
-  ::view-transition-old(root),
-  .dark::view-transition-old(root) {
-    animation: scale 1.5s;
-    z-index: -1;
-    transform-origin: top left;
-  }
-  @keyframes scale {
-    to {
-      mask-size: 400vmax;
-    }
-  }
-</style>
 
 <script is:inline>
   const theme = (() => {

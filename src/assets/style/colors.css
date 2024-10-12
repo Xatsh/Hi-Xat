@@ -1,0 +1,17 @@
+:root {
+  ---xat-primary: theme('colors.amber.600');
+  ---xat-secondary: theme('colors.amber.100');
+  ---xat-atom: theme('colors.white');
+  ---xat-major: theme('colors.black');
+  ---xat-decoration: theme('colors.gray.200');
+  ---xat-glass: theme('colors.gray.200') + '1A';
+  ---xat-mute: theme('colors.slate.500');
+}
+:root.dark {
+  ---xat-primary: theme('colors.sky.400');
+  ---xat-secondary: theme('colors.gray.800');
+  ---xat-atom: theme('colors.black');
+  ---xat-major: theme('colors.white');
+  ---xat-decoration: theme('colors.gray.700');
+  ---xat-glass: theme('colors.gray.800') + '1A';
+}
