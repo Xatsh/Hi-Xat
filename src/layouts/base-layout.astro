@@ -37,7 +37,7 @@ const { description = '✨ Coding with Love, Exploring the World.', label, title
   </body>
 </html>
 
-<style is:global>
+<style>
   html {
     cursor: url(/cursor/default.svg), default;
     a, button, input[type="button"], input[type="submit"], [role="button"] {
@@ -59,6 +59,9 @@ const { description = '✨ Coding with Love, Exploring the World.', label, title
   * {
     @apply 'selection:bg-primary selection:text-atom dark:selection:bg-primary-dark dark:selection:text-atom-dark';
   }
+</style>
+
+<style is:global>
   ::view-transition-new(root) {
     mask: url('/switch.svg') top left / 0 no-repeat;
     mask-origin: top left;

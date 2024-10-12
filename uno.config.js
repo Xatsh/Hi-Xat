@@ -40,13 +40,6 @@ export default {
       'word-break': 'break-all',
       'word-wrap': 'break-word',
     }],
-    ['xat-html', {
-      '-moz-osx-font-smoothing': 'auto',
-      '-webkit-font-smoothing': 'auto',
-      'font-family': 'MiSans, sans-serif',
-      'font-smooth': 'always',
-      'scroll-behavior': 'smooth',
-    }],
   ],
   theme: {
     breakpoints: {
