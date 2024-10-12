@@ -62,7 +62,6 @@ export default {
     fontWeight: {
       bold: 700,
       normal: 400,
-      semi: 600,
     },
   },
   transformers: [
