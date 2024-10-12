@@ -18,7 +18,7 @@
     "lint:fix": "eslint --fix ."
   },
   "devDependencies": {
-    "@astrojs/mdx": "^3.1.7",
+    "@astrojs/rss": "^4.0.8",
     "@astrojs/tailwind": "^5.1.1",
     "@egoist/tailwindcss-icons": "^1.8.1",
     "@iconify-json/mingcute": "^1.2.1",
@@ -31,6 +31,8 @@
     "date-fns": "^4.1.0",
     "eslint": "^9.12.0",
     "lefthook": "^1.7.18",
+    "markdown-it": "^14.1.0",
+    "sanitize-html": "^2.13.1",
     "sharp": "^0.33.5",
     "tailwind-merge": "^2.5.3",
     "tailwindcss": "^3.4.13",

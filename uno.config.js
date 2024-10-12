@@ -2,7 +2,7 @@ import { presetIcons, presetTypography, presetUno, presetWebFonts, transformerDi
 
 /** @type {import('unocss').UserConfig} */
 export default {
-  content: ['./src/**/*.{astro,mdx,tsx}'],
+  content: ['./src/**/*.{astro,tsx}'],
   presets: [
     presetWebFonts({
       fonts: {
