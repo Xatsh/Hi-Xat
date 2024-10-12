@@ -1,9 +1,15 @@
-import { presetIcons, presetTypography, presetUno, transformerDirectives } from 'unocss'
+import { presetIcons, presetTypography, presetUno, presetWebFonts, transformerDirectives } from 'unocss'
 
 /** @type {import('unocss').UserConfig} */
 export default {
   content: ['./src/**/*.{astro,mdx,tsx}'],
   presets: [
+    presetWebFonts({
+      fonts: {
+        sans: ['MiSans', 'sans-serif'],
+      },
+      provider: 'none',
+    }),
     presetIcons({
       extraProperties: {
         'display': 'inline-block',
@@ -33,6 +39,13 @@ export default {
       'text-wrap': 'wrap',
       'word-break': 'break-all',
       'word-wrap': 'break-word',
+    }],
+    ['xat-html', {
+      '-moz-osx-font-smoothing': 'auto',
+      '-webkit-font-smoothing': 'auto',
+      'font-family': 'MiSans, sans-serif',
+      'font-smooth': 'always',
+      'scroll-behavior': 'smooth',
     }],
   ],
   theme: {
