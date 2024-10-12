@@ -25,11 +25,11 @@ const { description = '✨ Coding with Love, Exploring the World.', label, title
     <title>{title ? `${title} | Xat` : 'Hi, Xat!'}</title>
   </head>
   <body
-    class="flex min-h-screen flex-col items-center bg-secondary text-atom-dark dark:bg-secondary-dark dark:text-atom"
+    class="min-h-screen flex flex-col items-center bg-secondary text-atom-dark dark:bg-secondary-dark dark:text-atom"
   >
     <Header />
     <Intro label={label} title={title} />
-    <content class="flex w-full grow flex-col gap-8 rounded-xl bg-atom px-6 py-8 tablet:w-4/5 desktop:w-2/3 dark:bg-atom-dark">
+    <content class="w-full flex grow flex-col gap-8 rounded-xl bg-atom px-6 py-8 desktop:w-2/3 tablet:w-4/5 dark:bg-atom-dark">
       <slot />
     </content>
     <Footer />
@@ -37,13 +37,6 @@ const { description = '✨ Coding with Love, Exploring the World.', label, title
 </html>
 
 <style is:global>
-  .xat-typo {
-    text-justify: inter-ideograph;
-    text-align: justify;
-    text-wrap: wrap;
-    word-wrap: break-word;
-    word-break: break-all;
-  }
   html {
     cursor: url(/cursor/default.svg), default;
     a, button, input[type="button"], input[type="submit"], [role="button"] {
@@ -63,18 +56,7 @@ const { description = '✨ Coding with Love, Exploring the World.', label, title
     }
   }
   * {
-    @apply selection:bg-primary selection:text-atom dark:selection:bg-primary-dark dark:selection:text-atom-dark;
-  }
-  ::view-transition-group(root) {
-    animation-timing-function: linear(
-      0 0%, 0.1684 2.66%, 0.3165 5.49%,
-      0.446 8.52%, 0.5581 11.78%,
-      0.6535 15.29%, 0.7341 19.11%,
-      0.8011 23.3%, 0.8557 27.93%,
-      0.8962 32.68%, 0.9283 38.01%,
-      0.9529 44.08%, 0.9711 51.14%,
-      0.9833 59.06%, 0.9915 68.74%, 1 100%
-    );
+    @apply 'selection:bg-primary selection:text-atom dark:selection:bg-primary-dark dark:selection:text-atom-dark';
   }
   ::view-transition-new(root) {
     mask: url('/switch.svg') top left / 0 no-repeat;

@@ -12,8 +12,9 @@ const { category, title } = Astro.props
 
 <Layout label={category} title={title}>
   <article
-    class="xat-typo prose max-w-none dark:prose-invert prose-a:text-primary dark:prose-a:text-primary-dark"
+    class="xat-typo max-w-none prose prose-truegray dark:prose-invert"
   >
     <slot />
   </article>
 </Layout>
+

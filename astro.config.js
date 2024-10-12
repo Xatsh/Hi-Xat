@@ -1,7 +1,12 @@
 import mdx from '@astrojs/mdx'
-import tailwind from '@astrojs/tailwind'
+import uno from 'unocss/astro'
 
 /** @type {import('astro').AstroUserConfig} */
 export default {
-  integrations: [tailwind(), mdx()],
+  build: {
+    inlineStylesheets: 'never',
+  },
+  integrations: [uno({
+    injectReset: true,
+  }), mdx()],
 }

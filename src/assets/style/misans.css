@@ -1,3 +1,7 @@
 @import url('/font/misans/bold/result.min.css');
 @import url('/font/misans/demibold/result.min.css');
 @import url('/font/misans/regular/result.min.css');
+
+html {
+  font-family: 'MiSans', sans-serif;
+}
