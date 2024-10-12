@@ -3,48 +3,6 @@ import { presetIcons, presetTypography, presetUno, presetWebFonts, transformerDi
 /** @type {import('unocss').UserConfig} */
 export default {
   content: ['./src/**/*.{astro,mdx,tsx}'],
-  preflights: [{
-    getCSS: () => `
-      * {
-        @apply 'selection:bg-primary selection:text-atom';
-      }
-      :root {
-        font-family: 'MiSans', sans-serif;
-        cursor: url(/cursor/default.svg), default;
-        a, button, input[type="button"], input[type="submit"], [role="button"] {
-          cursor: url(/cursor/pointer.svg), pointer;
-        }
-        textarea, input[type="text"], input[type="email"], input[type="search"], input[type="number"] {
-          cursor: url(/cursor/text.svg), text;
-        }
-      }
-      :root.dark {
-        cursor: url(/cursor/default_dark.svg), default;
-        a, button, input[type="button"], input[type="submit"], [role="button"] {
-          cursor: url(/cursor/pointer_dark.svg), pointer;
-        }
-        textarea, input[type="text"], input[type="email"], input[type="search"], input[type="number"] {
-          cursor: url(/cursor/text_dark.svg), text;
-        }
-      }
-      ::view-transition-new(root) {
-        mask: url('/switch.svg') top left / 0 no-repeat;
-        mask-origin: top left;
-        animation: scale 1.5s;
-      }
-      ::view-transition-old(root),
-      .dark::view-transition-old(root) {
-        animation: scale 1.5s;
-        z-index: -1;
-        transform-origin: top left;
-      }
-      @keyframes scale {
-        to {
-          mask-size: 400vmax;
-        }
-      }
-    `,
-  }],
   presets: [
     presetWebFonts({
       fonts: {
@@ -64,6 +22,9 @@ export default {
         'a': {
           color: 'var(---xat-primary)',
         },
+        'a:visited': {
+          color: 'var(---xat-pick)',
+        },
         'h1, h2, h3, h4, h5, h6': {
           'margin-top': '0',
           'scroll-margin-top': '3.5rem',
@@ -71,15 +32,10 @@ export default {
       },
     }),
   ],
-  rules: [
-    ['xat-typo', {
-      'text-align': 'justify',
-      'text-justify': 'inter-ideograph',
-      'text-wrap': 'wrap',
-      'word-break': 'break-all',
-      'word-wrap': 'break-word',
-    }],
-  ],
+  shortcuts: {
+    'xat-container': 'w-full desktop:w-4/7 tablet:w-4/5 px-6 py-8',
+    'xat-typo': 'text-wrap break-word',
+  },
   theme: {
     breakpoints: {
       desktop: '1240px',
@@ -91,6 +47,7 @@ export default {
       glass: 'var(---xat-glass)',
       major: 'var(---xat-major)',
       mute: 'var(---xat-mute)',
+      pick: 'var(---xat-pick)',
       primary: 'var(---xat-primary)',
       secondary: 'var(---xat-secondary)',
     },

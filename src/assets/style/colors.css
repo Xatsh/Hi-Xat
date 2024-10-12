@@ -1,5 +1,6 @@
 :root {
   ---xat-primary: theme('colors.amber.600');
+  ---xat-pick: theme('colors.amber.900');
   ---xat-secondary: theme('colors.amber.100');
   ---xat-atom: theme('colors.white');
   ---xat-major: theme('colors.black');
@@ -9,6 +10,7 @@
 }
 :root.dark {
   ---xat-primary: theme('colors.sky.400');
+  ---xat-pick: theme('colors.sky.100');
   ---xat-secondary: theme('colors.gray.800');
   ---xat-atom: theme('colors.black');
   ---xat-major: theme('colors.white');
