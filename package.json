@@ -26,7 +26,7 @@
     "@types/node": "^22.7.5",
     "@unocss/reset": "^0.63.4",
     "@xats/eslint-config": "^1.2.1",
-    "astro": "^4.15.12",
+    "astro": "^4.16.1",
     "clsx": "^2.1.1",
     "date-fns": "^4.1.0",
     "eslint": "^9.12.0",
