@@ -6,7 +6,7 @@
   ---xat-major: theme('colors.black');
   ---xat-decoration: theme('colors.gray.200');
   ---xat-glass: theme('colors.gray.200') + '1A';
-  ---xat-mute: theme('colors.slate.500');
+  ---xat-mute: theme('colors.slate.400');
 }
 :root.dark {
   ---xat-primary: theme('colors.sky.400');
@@ -16,4 +16,5 @@
   ---xat-major: theme('colors.white');
   ---xat-decoration: theme('colors.gray.700');
   ---xat-glass: theme('colors.gray.800') + '1A';
+  ---xat-mute: theme('colors.slate.600');
 }
