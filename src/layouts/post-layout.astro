@@ -3,16 +3,17 @@ import Layout from '@/layouts/base-layout.astro'
 
 interface Props {
   category: string
+  description: string
   publishedAt: Date
   title: string
 }
 
-const { category, title } = Astro.props
+const { category, description, title } = Astro.props
 ---
 
-<Layout label={category} title={title}>
+<Layout description={description} label={category} title={title}>
   <article
-    class="xat-typo max-w-none prose prose-truegray dark:prose-invert"
+    class="max-w-none xat-typo prose prose-truegray dark:prose-invert"
   >
     <slot />
   </article>

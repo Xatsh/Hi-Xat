@@ -14,6 +14,6 @@ const post = await getEntry('post', slug)
 const metaData = post.data
 const { Content } = await post.render()
 ---
-<PostLayout category={metaData.category} publishedAt={metaData.publishedAt} title={metaData.title}>
+<PostLayout category={metaData.category} description={metaData.summary} publishedAt={metaData.publishedAt} title={metaData.title}>
   <Content />
 </PostLayout>

@@ -1,24 +1,45 @@
 ---
 interface Props {
+  description?: string
   label?: string
   title?: string
 }
 
-const { label, title } = Astro.props
+const { description, label, title } = Astro.props
 ---
 <section
   class="xat-container mt-24 flex flex-col gap-4 bg-cover"
 >
-  <span class="text-2xl text-primary">{label ?? <span class="i-mingcute-sparkles-2-fill text-4xl" />}</span>
-  <h2 class="text-3xl font-bold">{title ?? 'Coding with Love, Exploring the World.'}</h2>
+  {
+    label
+      ? (
+        <span class="text-2xl text-primary" transition:name="post-label">{label}</span>
+      )
+      : (
+        <span class="text-2xl text-primary"><span class="i-mingcute-sparkles-2-fill text-4xl" /></span>
+      )
+  }
+  {
+    title
+      ? (
+        <h2 class="text-3xl font-bold" transition:name="post-title">{title}</h2>
+      )
+      : (
+        <h2 class="text-3xl font-bold">Coding with Love, Exploring the World.</h2>
+      )
+  }
   <div class="flex items-center gap-4 py-2 text-xl leading-4">
     {
-      !title && (
+      description && title
+        ? (
+          <p class="text-mute" transition:name="post-description">{description}</p>
+        )
+        : (
       <a aria-label="GitHub" href="https://github.com/xatloon" target="_blank"><span class="i-mingcute-github-line"></span></a>
       <a aria-label="Twitter/X" href="https://x.com/xatloon" target="_blank"><span class="i-mingcute-social-x-line"></span></a>
       <a aria-label="Telegram" href="https://t.me/xatloon" target="_blank"><span class="i-mingcute-telegram-line"></span></a>
       <a aria-label="RSS" href="/rss.xml"><span class="i-mingcute-rss-line"></span></a>
-      )
+        )
     }
   </div>
 </section>

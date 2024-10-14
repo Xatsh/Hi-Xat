@@ -1,4 +1,6 @@
 ---
+import { ViewTransitions } from 'astro:transitions'
+
 import Footer from '@/components/ui/footer.astro'
 import Header from '@/components/ui/header.astro'
 import Intro from '@/components/ui/intro.astro'
@@ -21,12 +23,13 @@ const { description = '✨ Coding with Love, Exploring the World.', label, title
 <html class="xat-html" lang="en">
   <head>
     <Meta description={description} />
+    <ViewTransitions />
     <title>{title ? `${title} | Xat` : 'Hi, Xat!'}</title>
   </head>
   <body class="min-h-screen flex flex-col items-center bg-secondary text-major">
     <Header />
-    <Intro label={label} title={title} />
-    <content class="xat-container flex grow flex-col gap-8 rounded-xl bg-atom">
+    <Intro description={description} label={label} title={title} />
+    <content class="flex grow flex-col gap-8 rounded-xl bg-atom xat-container">
       <slot />
     </content>
     <Footer />
@@ -35,6 +38,9 @@ const { description = '✨ Coding with Love, Exploring the World.', label, title
 
 <style>
   html {
+    * {
+      @apply 'selection:bg-primary selection:text-atom';
+    }
     font-family: 'MiSans', sans-serif;
     cursor: url(/cursor/default.svg), default;
     a,
@@ -68,31 +74,6 @@ const { description = '✨ Coding with Love, Exploring the World.', label, title
     input[type='number'] {
       cursor: url(/cursor/text_dark.svg), text;
     }
-  }
-</style>
-
-<style is:global>
-  ::view-transition-new(root) {
-    mask: url('/switch.svg') top left / 0 no-repeat;
-    mask-origin: top left;
-    animation: scale 1.5s;
-  }
-  ::view-transition-old(root),
-  .dark::view-transition-old(root) {
-    animation: scale 1.5s;
-    z-index: -1;
-    transform-origin: top left;
-  }
-  @keyframes scale {
-    to {
-      mask-size: 400vmax;
-    }
-  }
-  * {
-    @apply 'selection:bg-primary selection:text-atom';
-  }
-  button {
-    @apply 'desktop:hover:(opacity-80 shadow-none border-pick) transition-opacity transition-shadow transition-border';
   }
 </style>
 

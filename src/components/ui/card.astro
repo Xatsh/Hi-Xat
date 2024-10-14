@@ -12,13 +12,13 @@ const { description, label, showRedirect, title, url } = Astro.props;
 <a href={url} target={showRedirect ? '_blank' : '_self'}>
   <div class="flex items-center justify-between gap-2 overflow-hidden border-2 border-decoration rounded-xl p-4 transition-colors hover:border-primary">
     <div class="flex flex-col gap-1">
-      <span class="text-sm text-primary xat-typo">
+      <span class="xat-typo text-sm text-primary" transition:name="post-label">
         {label}
       </span>
-      <h3 class="font-semi">
+      <h3 class="font-semi" transition:name="post-title">
         {title}
       </h3>
-      <p class="text-sm text-mute xat-typo">
+      <p class="xat-typo text-sm text-mute" transition:name="post-description">
         {description}
       </p>
     </div>
