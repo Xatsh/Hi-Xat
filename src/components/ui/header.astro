@@ -11,9 +11,9 @@ interface Props {
 const { title } = Astro.props
 ---
 
-<header transition:persist class="xat-container sticky top-0 z-50 py-3 backdrop-blur" id="header">
-  <nav class="flex items-center justify-between">
-    <div class="flex items-center gap-2">
+<header transition:persist class="xat-container sticky top-0 z-50 py-3 backdrop-blur">
+  <nav class="flex items-center justify-between gap-2">
+    <div class="flex grow items-center gap-2">
       <a href="/">
         <Image
           alt="Avatar"
@@ -22,15 +22,15 @@ const { title } = Astro.props
           src={Avatar}
         />
       </a>
-      <h2 class="font-bold opacity-0 transition-opacity transition-duration-500 transition-delay-300 -z-50" id="header-title">{title}</h2>
+      <h2 class="grow py-2 font-bold opacity-0 transition-opacity transition-duration-500 transition-delay-300 -z-50" id="header-title">{title}</h2>
     </div>
     <ThemeToggle class="opacity-0 transition-delay-0 -z-50" id="header-toggle" />
   </nav>
 </header>
 
 <script is:inline>
-  // Header Scroll to Top
-  const header = document.getElementById('header')
+  // Header Title Scroll to Top
+  const header = document.getElementById('header-title')
   header.addEventListener('click', () => {
     window.scrollTo({ top: 0, behavior: 'smooth' })
   })
@@ -45,10 +45,10 @@ const { title } = Astro.props
       if (entry.intersectionRatio > 0) {
         document.getElementById('theme-toggle').classList.remove('opacity-0')
         document.getElementById('header-toggle').classList.add('-z-50', 'opacity-0')
-        document.getElementById('header-toggle').classList.remove('opacity-100', 'z-50')
+        document.getElementById('header-toggle').classList.remove('opacity-100', 'z-100')
       } else {
         document.getElementById('theme-toggle').classList.add('opacity-0')
-        document.getElementById('header-toggle').classList.add('opacity-100', 'z-50')
+        document.getElementById('header-toggle').classList.add('opacity-100', 'z-100')
         document.getElementById('header-toggle').classList.remove('-z-50', 'opacity-0')
       }
     },
