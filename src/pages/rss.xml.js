@@ -19,7 +19,7 @@ export async function GET(context) {
       title: post.data.title,
     })),
     site: context.site,
-    stylesheet: '/pretty-feed-v3.xsl',
+    stylesheet: '/feed.xsl',
     title: 'Hi, Xat!',
     trailingSlash: false,
   })
