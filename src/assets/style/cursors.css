@@ -1,0 +1,25 @@
+:root {
+  ---xat-cursor-default: url(/cursor/default.svg), default;
+  ---xat-cursor-pointer: url(/cursor/pointer.svg), pointer;
+  ---xat-cursor-text: url(/cursor/text.svg), text;
+  cursor: var(---xat-cursor-default);
+  a,
+  button,
+  input[type='button'],
+  input[type='submit'],
+  [role='button'] {
+    cursor: var(---xat-cursor-pointer);
+  }
+  textarea,
+  input[type='text'],
+  input[type='email'],
+  input[type='search'],
+  input[type='number'] {
+    cursor: var(---xat-cursor-text);
+  }
+}
+:root.dark {
+  ---xat-cursor-default: url(/cursor/default_dark.svg), default;
+  ---xat-cursor-pointer: url(/cursor/pointer_dark.svg), pointer;
+  ---xat-cursor-text: url(/cursor/text_dark.svg), text;
+}

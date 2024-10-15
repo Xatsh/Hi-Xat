@@ -22,7 +22,11 @@ const { title } = Astro.props
           src={Avatar}
         />
       </a>
-      <h2 class="grow py-2 font-bold opacity-0 transition-opacity transition-duration-500 transition-delay-300 -z-50" id="header-title">{title}</h2>
+      <button aria-label="Scroll to Top" class="transition-duration-500 transition-delay-300 -z-50 grow py-2 font-bold opacity-0 transition-opacity" id="header-title">
+        <h2>
+          {title}
+        </h2>
+      </button>
     </div>
     <ThemeToggle class="opacity-0 transition-delay-0 -z-50" id="header-toggle" />
   </nav>
@@ -30,12 +34,11 @@ const { title } = Astro.props
 
 <script is:inline>
   // Header Title Scroll to Top
-  const header = document.getElementById('header-title')
-  header.addEventListener('click', () => {
+  document.getElementById('header-title').addEventListener('click', () => {
     window.scrollTo({ top: 0, behavior: 'smooth' })
   })
   document.addEventListener('astro:after-swap', () => {
-    header.addEventListener('click', () => {
+    document.getElementById('header-title').addEventListener('click', () => {
       window.scrollTo({ top: 0, behavior: 'smooth' })
     })
   })

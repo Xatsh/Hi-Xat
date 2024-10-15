@@ -9,6 +9,7 @@ import Meta from '@/components/ui/meta.astro'
 import '@/assets/style/misans-regular.css'
 import '@/assets/style/misans-bold.css'
 import '@/assets/style/colors.css'
+import '@/assets/style/cursors.css'
 
 interface Props {
   description?: string
@@ -42,38 +43,6 @@ const { description = '✨ Coding with Love, Exploring the World.', label, title
       @apply 'selection:bg-primary selection:text-atom';
     }
     font-family: 'MiSans', sans-serif;
-    cursor: url(/cursor/default.svg), default;
-    a,
-    button,
-    input[type='button'],
-    input[type='submit'],
-    [role='button'] {
-      cursor: url(/cursor/pointer.svg), pointer;
-    }
-    textarea,
-    input[type='text'],
-    input[type='email'],
-    input[type='search'],
-    input[type='number'] {
-      cursor: url(/cursor/text.svg), text;
-    }
-  }
-  html.dark {
-    cursor: url(/cursor/default_dark.svg), default;
-    a,
-    button,
-    input[type='button'],
-    input[type='submit'],
-    [role='button'] {
-      cursor: url(/cursor/pointer_dark.svg), pointer;
-    }
-    textarea,
-    input[type='text'],
-    input[type='email'],
-    input[type='search'],
-    input[type='number'] {
-      cursor: url(/cursor/text_dark.svg), text;
-    }
   }
 </style>
 
