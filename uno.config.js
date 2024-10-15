@@ -34,7 +34,7 @@ export default {
   ],
   shortcuts: {
     'xat-container': 'w-full desktop:w-4/7 tablet:w-4/5 px-6 py-8',
-    'xat-typo': 'text-wrap break-word',
+    'xat-typo': 'text-wrap break-words',
   },
   theme: {
     breakpoints: {

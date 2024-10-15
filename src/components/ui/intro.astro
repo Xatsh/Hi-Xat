@@ -1,15 +1,17 @@
 ---
+import ThemeToggle from '@/components/ui/theme-toggle.astro'
+
 interface Props {
-  description?: string
   label?: string
   title?: string
 }
 
-const { description, label, title } = Astro.props
+const { label, title } = Astro.props
 ---
 <section
-  class="xat-container mt-24 flex flex-col gap-4 bg-cover"
+  class="relative flex flex-col justify-evenly gap-4 pb-4 xat-container"
 >
+  <ThemeToggle class="absolute right-6 top-8 z-50" />
   {
     label
       ? (
@@ -22,24 +24,12 @@ const { description, label, title } = Astro.props
   {
     title
       ? (
-        <h2 class="text-3xl font-bold" transition:name="post-title">{title}</h2>
+        <h2 class="text-3xl font-bold" id="title" transition:name="post-title">{title}</h2>
       )
       : (
-        <h2 class="text-3xl font-bold">Coding with Love, Exploring the World.</h2>
+        <h2 class="text-3xl font-bold" id="title">Coding with Love, Exploring the World.</h2>
       )
   }
-  <div class="flex items-center gap-4 py-2 text-xl leading-4">
-    {
-      description && title
-        ? (
-          <p class="text-mute" transition:name="post-description">{description}</p>
-        )
-        : (
-      <a aria-label="GitHub" href="https://github.com/xatloon" target="_blank"><span class="i-mingcute-github-line"></span></a>
-      <a aria-label="Twitter/X" href="https://x.com/xatloon" target="_blank"><span class="i-mingcute-social-x-line"></span></a>
-      <a aria-label="Telegram" href="https://t.me/xatloon" target="_blank"><span class="i-mingcute-telegram-line"></span></a>
-      <a aria-label="RSS" href="/rss.xml"><span class="i-mingcute-rss-line"></span></a>
-        )
-    }
-  </div>
 </section>
+
+

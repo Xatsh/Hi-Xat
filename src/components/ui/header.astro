@@ -2,18 +2,65 @@
 import { Image } from 'astro:assets'
 
 import Avatar from '@/assets/image/avatar.webp'
+import ThemeToggle from '@/components/ui/theme-toggle.astro'
+
+interface Props {
+  title: string
+}
+
+const { title } = Astro.props
 ---
 
-<header transition:persist class="xat-container fixed z-50 flex items-center justify-between">
-  <a href="/">
-    <Image
-      alt="Avatar"
-      class="size-10 border border-decoration rounded-full shadow-xl"
-      loading="eager"
-      src={Avatar}
-    />
-  </a>
-  <button aria-label="Theme Toggle" class="size-10 flex items-center justify-center border border-decoration rounded-full bg-glass shadow-xl backdrop-blur" id="theme-toggle">
-    <span class="i-mingcute-sun-line dark:i-mingcute-moon-stars-line size-5"></span>
-  </button>
+<header transition:persist class="xat-container sticky top-0 z-50 py-3 backdrop-blur" id="header">
+  <nav class="flex items-center justify-between">
+    <div class="flex items-center gap-2">
+      <a href="/">
+        <Image
+          alt="Avatar"
+          class="size-10 border border-decoration rounded-full shadow-xl"
+          loading="eager"
+          src={Avatar}
+        />
+      </a>
+      <h2 class="font-bold opacity-0 transition-opacity transition-duration-500 transition-delay-300 -z-50" id="header-title">{`${title} | Xat`}</h2>
+    </div>
+    <ThemeToggle class="opacity-0 transition-delay-0 -z-50" id="header-toggle" />
+  </nav>
 </header>
+
+<script is:inline>
+  // Theme Toggle Observer
+  const headerToggleObserver = new IntersectionObserver(
+    ([entry]) => {
+      if (entry.intersectionRatio > 0) {
+        document.getElementById('theme-toggle').classList.remove('opacity-0')
+        document.getElementById('header-toggle').classList.add('-z-50', 'opacity-0')
+        document.getElementById('header-toggle').classList.remove('opacity-100', 'z-50')
+      } else {
+        document.getElementById('theme-toggle').classList.add('opacity-0')
+        document.getElementById('header-toggle').classList.add('opacity-100', 'z-50')
+        document.getElementById('header-toggle').classList.remove('-z-50', 'opacity-0')
+      }
+    },
+  )
+  headerToggleObserver.observe(document.getElementById('theme-toggle'))
+  document.addEventListener('astro:after-swap', () => {
+    headerToggleObserver.observe(document.getElementById('theme-toggle'))
+  })
+  // Header Title Observer
+  const headerTitleObserver = new IntersectionObserver(
+    ([entry]) => {
+      if (entry.intersectionRatio > 0) {
+        document.getElementById('header-title').classList.remove('opacity-100', 'z-50')
+        document.getElementById('header-title').classList.add('opacity-0', '-z-50')
+      } else {
+        document.getElementById('header-title').classList.add('opacity-100', 'z-50')
+        document.getElementById('header-title').classList.remove('opacity-0', '-z-50')
+      }
+    },
+  )
+  headerTitleObserver.observe(document.getElementById('title'))
+  document.addEventListener('astro:after-swap', () => {
+    headerTitleObserver.observe(document.getElementById('title'))
+  })
+</script>
