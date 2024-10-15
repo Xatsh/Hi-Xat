@@ -15,19 +15,19 @@ const { label, title } = Astro.props
   {
     label
       ? (
-        <span class="text-2xl text-primary" transition:name="post-label">{label}</span>
+        <span class="text-2xl text-primary" transition:name="label">{label}</span>
       )
       : (
-        <span class="text-2xl text-primary"><span class="i-mingcute-sparkles-2-fill text-4xl" /></span>
+        <span class="text-2xl text-primary" transition:name="label"><span class="i-mingcute-sparkles-2-fill text-4xl" /></span>
       )
   }
   {
     title
       ? (
-        <h2 class="text-3xl font-bold" id="title" transition:name="post-title">{title}</h2>
+        <h2 class="text-3xl font-bold" id="title" transition:name="title">{title}</h2>
       )
       : (
-        <h2 class="text-3xl font-bold" id="title">Coding with Love, Exploring the World.</h2>
+        <h2 class="text-3xl font-bold" id="title" transition:name="title">Coding with Love, Exploring the World.</h2>
       )
   }
 </section>

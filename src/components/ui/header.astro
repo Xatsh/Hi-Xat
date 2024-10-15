@@ -11,7 +11,7 @@ interface Props {
 const { title } = Astro.props
 ---
 
-<header transition:persist class="xat-container sticky top-0 z-50 py-3 backdrop-blur">
+<header class="sticky top-0 z-50 py-3 backdrop-blur xat-container" transition:name="header">
   <nav class="flex items-center justify-between gap-2">
     <div class="flex grow items-center gap-2">
       <a href="/">
