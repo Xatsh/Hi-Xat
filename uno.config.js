@@ -33,7 +33,7 @@ export default {
     }),
   ],
   shortcuts: {
-    'xat-container': 'w-full desktop:w-4/7 tablet:w-4/5 px-6 py-8',
+    'xat-container': 'w-full desktop:w-4/7 tablet:w-4/5 p-6',
     'xat-typo': 'text-wrap break-words',
   },
   theme: {

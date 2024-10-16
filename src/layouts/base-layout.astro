@@ -27,12 +27,12 @@ const { description = '✨ Coding with Love, Exploring the World.', label, title
     <ViewTransitions />
     <title>{title ? `${title} | Xat` : 'Hi, Xat!'}</title>
   </head>
-  <body class="min-h-screen flex flex-col items-center bg-secondary text-major">
+  <body class="min-h-screen flex flex-col items-center gap-8 bg-secondary text-major">
     <Intro label={label} title={title} />
     <Header title={title ?? 'Hi, Xat!'} />
-    <content class="bg-atom xat-container tablet:rounded-xl flex grow flex-col gap-8" transition:name="content">
+    <main class="flex grow flex-col gap-8 rounded-2xl bg-atom xat-container" transition:name="content">
       <slot />
-    </content>
+    </main>
     <Footer />
   </body>
 </html>
