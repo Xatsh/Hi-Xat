@@ -1,8 +1,10 @@
 ---
+import type { Categories } from '@/types'
+
 import Layout from '@/layouts/base-layout.astro'
 
 interface Props {
-  category: string
+  category: Categories
   description: string
   publishedAt: Date
   title: string

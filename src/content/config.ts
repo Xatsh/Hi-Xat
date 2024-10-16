@@ -2,7 +2,7 @@ import { defineCollection, z } from 'astro:content'
 
 const postCollection = defineCollection({
   schema: z.object({
-    category: z.string(),
+    category: z.union([z.literal('Code'), z.literal('Design'), z.literal('Life')]),
     cover: z.string(),
     publishedAt: z.date(),
     summary: z.string(),

@@ -3,7 +3,7 @@
   ---xat-pick: theme('colors.amber.900');
   ---xat-secondary: theme('colors.amber.100');
   ---xat-atom: theme('colors.white');
-  ---xat-major: theme('colors.black');
+  ---xat-major: #121212;
   ---xat-decoration: theme('colors.gray.200');
   ---xat-glass: theme('colors.gray.200') + '1A';
   ---xat-mute: theme('colors.gray.500');
@@ -12,7 +12,7 @@
   ---xat-primary: theme('colors.sky.400');
   ---xat-pick: theme('colors.sky.100');
   ---xat-secondary: theme('colors.gray.800');
-  ---xat-atom: theme('colors.black');
+  ---xat-atom: #121212;
   ---xat-major: theme('colors.white');
   ---xat-decoration: theme('colors.gray.700');
   ---xat-glass: theme('colors.gray.800') + '1A';

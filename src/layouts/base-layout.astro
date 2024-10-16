@@ -1,4 +1,6 @@
 ---
+import type { Categories } from '@/types'
+
 import { ViewTransitions } from 'astro:transitions'
 
 import Footer from '@/components/ui/footer.astro'
@@ -13,7 +15,7 @@ import '@/assets/style/cursors.css'
 
 interface Props {
   description?: string
-  label?: string
+  label?: Categories
   title?: string
 }
 
@@ -27,7 +29,7 @@ const { description = '✨ Coding with Love, Exploring the World.', label, title
     <ViewTransitions />
     <title>{title ? `${title} | Xat` : 'Hi, Xat!'}</title>
   </head>
-  <body class="min-h-screen flex flex-col items-center gap-8 bg-secondary text-major">
+  <body class="min-h-screen flex flex-col items-center justify-evenly gap-4 bg-secondary text-major">
     <Intro label={label} title={title} />
     <Header title={title ?? 'Hi, Xat!'} />
     <main class="flex grow flex-col gap-8 rounded-2xl bg-atom xat-container" transition:name="content">

@@ -1,34 +1,51 @@
 ---
+import type { Categories } from '@/types'
+
 import ThemeToggle from '@/components/ui/theme-toggle.astro'
 
 interface Props {
-  label?: string
+  label?: Categories
   title?: string
 }
 
 const { label, title } = Astro.props
+
+enum CategoryIcons {
+  Code = 'i-mingcute-code-fill',
+  Design = 'i-mingcute-paint-brush-fill',
+  Life = 'i-mingcute-gift-fill',
+}
 ---
 <section
-  class="relative flex flex-col justify-evenly gap-4 pb-0 xat-container"
+  class="relative flex flex-col gap-4 pb-0 xat-container"
   id="intro"
 >
-  <ThemeToggle class="absolute right-6 top-8 z-50" />
+  <ThemeToggle class="absolute right-6 top-6 z-50" />
   {
     label
       ? (
-        <span class="text-2xl text-primary" transition:name="label">{label}</span>
+        <span class="flex items-center gap-2 text-2xl text-primary" transition:name="label">
+          <span class=`${CategoryIcons[label]}`></span>
+          {label}
+        </span>
       )
       : (
-        <span class="text-2xl text-primary" transition:name="label"><span class="i-mingcute-sparkles-2-fill text-4xl" /></span>
+        <span class="text-primary text-3xl" transition:name="label"><span class="i-mingcute-sparkles-2-fill" /></span>
       )
   }
   {
     title
       ? (
-        <h2 class="text-3xl font-bold" id="title" transition:name="title">{title}</h2>
+        <h1 class="text-4xl font-bold" id="title" transition:name="title">{title}</h1>
       )
       : (
-        <h2 class="text-3xl font-bold" id="title" transition:name="title">Coding with Love, Exploring the World.</h2>
+        <h2 class="text-4xl font-bold" id="title" transition:name="title">Coding with Love, Exploring the World.</h2>
+        <nav class="flex items-center gap-6 text-2xl">
+          <a aria-label="GitHub" href="https://github.com/xatloon" target="_blank"><span class="i-mingcute-github-fill"></span></a>
+          <a aria-label="Twitter/X" href="https://x.com/xatloon" target="_blank"><span class="i-mingcute-social-x-fill"></span></a>
+          <a aria-label="Telegram" href="https://t.me/xatloon" target="_blank"><span class="i-mingcute-telegram-fill"></span></a>
+          <a aria-label="RSS" href="/rss.xml" target="_blank"><span class="i-mingcute-rss-fill"></span></a>
+        </nav>
       )
   }
 </section>
