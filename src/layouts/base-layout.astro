@@ -29,7 +29,7 @@ const { description = '✨ Coding with Love, Exploring the World.', label, title
     <ViewTransitions />
     <title>{title ? `${title} | Xat` : 'Hi, Xat!'}</title>
   </head>
-  <body class="min-h-screen flex flex-col items-center justify-evenly bg-secondary text-major">
+  <body class="min-h-screen flex flex-col items-center justify-evenly bg-secondary text-major font-sans selection:bg-primary selection:text-atom">
     <Header label={label} title={title} />
     <main class="flex grow flex-col gap-8 rounded-2xl bg-atom shadow-sm xat-container" transition:name="content">
       <slot />
@@ -37,16 +37,6 @@ const { description = '✨ Coding with Love, Exploring the World.', label, title
     <Footer />
   </body>
 </html>
-
-<style>
-  html {
-    * {
-      @apply 'selection:bg-primary selection:text-atom';
-    }
-    font-family: 'MiSans', sans-serif;
-    font-size: 0.875rem, 14px;
-  }
-</style>
 
 <script is:inline>
   const theme = (() => {
