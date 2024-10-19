@@ -2,16 +2,15 @@
 import { cn } from '@/utils'
 
 interface Props {
-  class: string
   id?: string
 }
 
-const { class: className, id = 'theme-toggle' } = Astro.props
+const { id = 'theme-toggle' } = Astro.props
 ---
 
 
-<button aria-label="Theme Toggle" class={cn('size-10 flex items-center justify-center border border-decoration rounded-full transition-delay-300 transition-opacity transition-duration-500', className)} id={id}>
-  <span class="i-mingcute-sun-line dark:i-mingcute-moon-stars-line size-5"></span>
+<button aria-label="Theme Toggle" class="size-10 flex items-center justify-center border border-decoration rounded-full text-lg shadow transition-colors hover:border-primary hover:text-primary" id={id}>
+  <span class="i-mingcute-sun-line dark:i-mingcute-moon-line"></span>
 </button>
 
 <script

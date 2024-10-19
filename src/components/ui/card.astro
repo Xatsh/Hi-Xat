@@ -12,27 +12,27 @@ interface Props {
 const { description, label, showRedirect, title, url } = Astro.props
 
 enum CategoryIcons {
-  Code = 'i-mingcute-code-fill',
-  Design = 'i-mingcute-paint-brush-fill',
-  Life = 'i-mingcute-gift-fill',
+  Code = 'i-mingcute-code-line',
+  Design = 'i-mingcute-paint-brush-line',
+  Life = 'i-mingcute-gift-line',
 }
 ---
 <a href={url} target={showRedirect ? '_blank' : '_self'}>
-  <div class="flex items-center justify-between gap-2 overflow-hidden border-2 border-decoration rounded-xl p-4 transition-colors hover:border-primary">
+  <div class="flex items-center justify-between overflow-hidden border border-decoration rounded-xl p-3 shadow-sm transition-colors transition-shadow hover:border-primary hover:shadow-lg">
     <div class="flex flex-col gap-1">
-      <span class="flex items-center gap-1 xat-typo text-sm text-primary">
+      <span class="flex items-center gap-1 xat-typo text-xs text-primary">
         <span class=`${CategoryIcons[label]}`></span>
         {label}
       </span>
-      <h3 class="xat-typo">
+      <h4 class="xat-typo">
         {title}
-      </h3>
-      <p class="xat-typo text-mute">
+      </h4>
+      <p class="xat-typo text-sm text-mute">
         {description}
       </p>
     </div>
     {showRedirect && (
-      <span class="i-mingcute-external-link-line grow-0 text-decoration"></span>
+      <span class="i-mingcute-external-link-line shrink-0 grow-0 text-decoration"></span>
     )}
   </div>
 </a>

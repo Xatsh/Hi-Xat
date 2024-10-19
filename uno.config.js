@@ -15,7 +15,7 @@ export default {
     presetIcons({
       extraProperties: {
         'display': 'inline-block',
-        'vertical-align': 'middle',
+        'vertical-align': 'text-bottom',
       },
     }),
     presetUno(),
@@ -35,7 +35,7 @@ export default {
     }),
   ],
   shortcuts: {
-    'xat-container': 'w-full desktop:w-4/7 tablet:w-4/5 p-6',
+    'xat-container': 'w-full tablet:w-4/7 p-6',
     'xat-typo': 'text-wrap break-words',
   },
   theme: {

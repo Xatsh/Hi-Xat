@@ -11,40 +11,31 @@ interface Props {
 const { label, title } = Astro.props
 
 enum CategoryIcons {
-  Code = 'i-mingcute-code-fill',
-  Design = 'i-mingcute-paint-brush-fill',
-  Life = 'i-mingcute-gift-fill',
+  Code = 'i-mingcute-code-line',
+  Design = 'i-mingcute-paint-brush-line',
+  Life = 'i-mingcute-gift-line',
 }
 ---
 <section
-  class="relative flex flex-col gap-4 pb-0 xat-container"
+  class="relative flex flex-col gap-2 pt-0 xat-container"
   id="intro"
 >
-  <ThemeToggle class="absolute right-6 top-6 z-50" />
-  {
-    label
-      ? (
-        <span class="flex items-center gap-2 text-2xl text-primary" transition:name="label">
-          <span class=`${CategoryIcons[label]}`></span>
-          {label}
-        </span>
-      )
-      : (
-        <span class="text-primary text-3xl" transition:name="label"><span class="i-mingcute-sparkles-2-fill" /></span>
-      )
-  }
+  <span class="flex items-center gap-2 text-lg text-primary">
+    <span class=`${label ? CategoryIcons[label] : 'i-mingcute-sparkles-2-fill text-4xl'}` transition:name="logo" />
+    {label ?? ''}
+  </span>
   {
     title
       ? (
-        <h1 class="text-4xl font-bold" id="title" transition:name="title">{title}</h1>
+        <h2 class="text-3xl font-bold" id="title" transition:name="title">{title}</h2>
       )
       : (
-        <h2 class="text-4xl font-bold" id="title" transition:name="title">Coding with Love, Exploring the World.</h2>
-        <nav class="flex items-center gap-6 text-2xl">
-          <a aria-label="GitHub" href="https://github.com/xatloon" target="_blank"><span class="i-mingcute-github-fill"></span></a>
-          <a aria-label="Twitter/X" href="https://x.com/xatloon" target="_blank"><span class="i-mingcute-social-x-fill"></span></a>
-          <a aria-label="Telegram" href="https://t.me/xatloon" target="_blank"><span class="i-mingcute-telegram-fill"></span></a>
-          <a aria-label="RSS" href="/rss.xml" target="_blank"><span class="i-mingcute-rss-fill"></span></a>
+        <h2 class="text-3xl font-bold" id="title" transition:name="title">Coding with Love, Exploring the World.</h2>
+        <nav class="flex items-center gap-6 text-lg">
+          <a aria-label="GitHub" href="https://github.com/xatloon" target="_blank"><span class="i-mingcute-github-fill hover:text-primary transition-colors"></span></a>
+          <a aria-label="Twitter/X" href="https://x.com/xatloon" target="_blank"><span class="i-mingcute-social-x-fill hover:text-primary transition-colors"></span></a>
+          <a aria-label="Telegram" href="https://t.me/xatloon" target="_blank"><span class="i-mingcute-telegram-fill hover:text-primary transition-colors"></span></a>
+          <a aria-label="RSS" href="/rss.xml" target="_blank"><span class="i-mingcute-rss-fill hover:text-primary transition-colors"></span></a>
         </nav>
       )
   }

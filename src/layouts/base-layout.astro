@@ -29,10 +29,9 @@ const { description = '✨ Coding with Love, Exploring the World.', label, title
     <ViewTransitions />
     <title>{title ? `${title} | Xat` : 'Hi, Xat!'}</title>
   </head>
-  <body class="min-h-screen flex flex-col items-center justify-evenly gap-4 bg-secondary text-major">
-    <Intro label={label} title={title} />
-    <Header title={title ?? 'Hi, Xat!'} />
-    <main class="flex grow flex-col gap-8 rounded-2xl bg-atom xat-container" transition:name="content">
+  <body class="min-h-screen flex flex-col items-center justify-evenly bg-secondary text-[14px] text-major">
+    <Header label={label} title={title} />
+    <main class="flex grow flex-col gap-8 rounded-2xl bg-atom shadow-sm xat-container" transition:name="content">
       <slot />
     </main>
     <Footer />
