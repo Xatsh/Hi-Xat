@@ -5,6 +5,6 @@ export default {
   integrations: [uno({
     injectReset: true,
   })],
-  site: 'https://xatloon.com',
+  site: 'https://xat.moe',
   trailingSlash: 'never',
 }

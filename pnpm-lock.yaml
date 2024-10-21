@@ -21,8 +21,8 @@ importers:
         specifier: ^0.63.4
         version: 0.63.4
       '@xats/eslint-config':
-        specifier: ^1.2.1
-        version: 1.2.1(eslint@9.13.0(jiti@2.3.3))(tailwindcss@3.4.14)(typescript@5.6.3)
+        specifier: ^1.2.2
+        version: 1.2.2(eslint@9.13.0(jiti@2.3.3))(tailwindcss@3.4.14)(typescript@5.6.3)
       astro:
         specifier: ^4.16.6
         version: 4.16.6(@types/node@22.7.7)(rollup@4.24.0)(typescript@5.6.3)
@@ -1039,8 +1039,8 @@ packages:
     peerDependencies:
       vite: ^2.9.0 || ^3.0.0-0 || ^4.0.0 || ^5.0.0-0
 
-  '@xats/eslint-config@1.2.1':
-    resolution: {integrity: sha512-j+mEuETbeHUPfjzknqxLQALQ/dxaxkvka2HkLdHMR4G1DydU1cPfi3afGCkqmMvez6aOTPE/spRJv9H4S5UcSQ==}
+  '@xats/eslint-config@1.2.2':
+    resolution: {integrity: sha512-z6Abdd0FWCmU2pgqaDVUw/pLH5ppNWuyY8JnVh2LQIDK6PFmX2ZZ/Sbv6X0qC3fBf+clVViNTmEimrQtI+tqgQ==}
     peerDependencies:
       eslint: ^9.5.0
 
@@ -1577,8 +1577,8 @@ packages:
       typescript:
         optional: true
 
-  eslint-plugin-react-hooks@5.1.0-rc-67fee58b-20240926:
-    resolution: {integrity: sha512-FqGr3J8gqO2ZUW5pJsvDdf5s3F52lOIRlTu2z16uRm1LhyM1vPKvRETmptui6M3Z8C6nfgJA3WYvqLXL5l0KHA==}
+  eslint-plugin-react-hooks@5.0.0:
+    resolution: {integrity: sha512-hIOwI+5hYGpJEc4uPRmz2ulCjAGD/N13Lukkh8cLV0i2IRk/bdZDYjgLVHj+U9Z704kLIdIO6iueGvxNur0sgw==}
     engines: {node: '>=10'}
     peerDependencies:
       eslint: ^3.0.0 || ^4.0.0 || ^5.0.0 || ^6.0.0 || ^7.0.0 || ^8.0.0-0 || ^9.0.0
@@ -1593,8 +1593,8 @@ packages:
       typescript:
         optional: true
 
-  eslint-plugin-react-refresh@0.4.12:
-    resolution: {integrity: sha512-9neVjoGv20FwYtCP6CB1dzR1vr57ZDNOXst21wd2xJ/cTlM2xLq0GWVlSNTdMn/4BtP6cHYBMCSp1wFBJ9jBsg==}
+  eslint-plugin-react-refresh@0.4.13:
+    resolution: {integrity: sha512-f1EppwrpJRWmqDTyvAyomFVDYRtrS7iTEqv3nokETnMiMzs2SSTmKRTACce4O2p4jYyowiSMvpdwC/RLcMFhuQ==}
     peerDependencies:
       eslint: '>=7'
 
@@ -1636,8 +1636,8 @@ packages:
     peerDependencies:
       eslint: '>=6.0.0'
 
-  eslint-plugin-unicorn@55.0.0:
-    resolution: {integrity: sha512-n3AKiVpY2/uDcGrS3+QsYDkjPfaOrNrsfQxU9nt5nitd9KuvVXrfAvgCO9DYPSfap+Gqjw9EOrXIsBp5tlHZjA==}
+  eslint-plugin-unicorn@56.0.0:
+    resolution: {integrity: sha512-aXpddVz/PQMmd69uxO98PA4iidiVNvA0xOtbpUoz1WhBd4RxOQQYqN618v68drY0hmy5uU2jy1bheKEVWBjlPw==}
     engines: {node: '>=18.18'}
     peerDependencies:
       eslint: '>=8.56.0'
@@ -4274,7 +4274,7 @@ snapshots:
       - rollup
       - supports-color
 
-  '@xats/eslint-config@1.2.1(eslint@9.13.0(jiti@2.3.3))(tailwindcss@3.4.14)(typescript@5.6.3)':
+  '@xats/eslint-config@1.2.2(eslint@9.13.0(jiti@2.3.3))(tailwindcss@3.4.14)(typescript@5.6.3)':
     dependencies:
       '@eslint-react/eslint-plugin': 1.15.0(eslint@9.13.0(jiti@2.3.3))(typescript@5.6.3)
       '@html-eslint/eslint-plugin': 0.27.0
@@ -4295,12 +4295,12 @@ snapshots:
       eslint-plugin-jsonc: 2.16.0(eslint@9.13.0(jiti@2.3.3))
       eslint-plugin-n: 17.11.1(eslint@9.13.0(jiti@2.3.3))
       eslint-plugin-perfectionist: 3.9.1(astro-eslint-parser@1.0.3(typescript@5.6.3))(eslint@9.13.0(jiti@2.3.3))(typescript@5.6.3)
-      eslint-plugin-react-hooks: 5.1.0-rc-67fee58b-20240926(eslint@9.13.0(jiti@2.3.3))
-      eslint-plugin-react-refresh: 0.4.12(eslint@9.13.0(jiti@2.3.3))
+      eslint-plugin-react-hooks: 5.0.0(eslint@9.13.0(jiti@2.3.3))
+      eslint-plugin-react-refresh: 0.4.13(eslint@9.13.0(jiti@2.3.3))
       eslint-plugin-regexp: 2.6.0(eslint@9.13.0(jiti@2.3.3))
       eslint-plugin-tailwindcss: 3.17.5(tailwindcss@3.4.14)
       eslint-plugin-toml: 0.11.1(eslint@9.13.0(jiti@2.3.3))
-      eslint-plugin-unicorn: 55.0.0(eslint@9.13.0(jiti@2.3.3))
+      eslint-plugin-unicorn: 56.0.0(eslint@9.13.0(jiti@2.3.3))
       eslint-plugin-unused-imports: 4.1.4(@typescript-eslint/eslint-plugin@8.10.0(@typescript-eslint/parser@8.10.0(eslint@9.13.0(jiti@2.3.3))(typescript@5.6.3))(eslint@9.13.0(jiti@2.3.3))(typescript@5.6.3))(eslint@9.13.0(jiti@2.3.3))
       eslint-plugin-yml: 1.14.0(eslint@9.13.0(jiti@2.3.3))
       eslint-typegen: 0.3.2(eslint@9.13.0(jiti@2.3.3))
@@ -4983,7 +4983,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  eslint-plugin-react-hooks@5.1.0-rc-67fee58b-20240926(eslint@9.13.0(jiti@2.3.3)):
+  eslint-plugin-react-hooks@5.0.0(eslint@9.13.0(jiti@2.3.3)):
     dependencies:
       eslint: 9.13.0(jiti@2.3.3)
 
@@ -5006,7 +5006,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  eslint-plugin-react-refresh@0.4.12(eslint@9.13.0(jiti@2.3.3)):
+  eslint-plugin-react-refresh@0.4.13(eslint@9.13.0(jiti@2.3.3)):
     dependencies:
       eslint: 9.13.0(jiti@2.3.3)
 
@@ -5078,7 +5078,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  eslint-plugin-unicorn@55.0.0(eslint@9.13.0(jiti@2.3.3)):
+  eslint-plugin-unicorn@56.0.0(eslint@9.13.0(jiti@2.3.3)):
     dependencies:
       '@babel/helper-validator-identifier': 7.25.7
       '@eslint-community/eslint-utils': 4.4.0(eslint@9.13.0(jiti@2.3.3))

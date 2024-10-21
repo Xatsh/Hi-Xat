@@ -22,7 +22,7 @@
     "@iconify-json/mingcute": "^1.2.1",
     "@types/node": "^22.7.7",
     "@unocss/reset": "^0.63.4",
-    "@xats/eslint-config": "^1.2.1",
+    "@xats/eslint-config": "^1.2.2",
     "astro": "^4.16.6",
     "clsx": "^2.1.1",
     "date-fns": "^4.1.0",
