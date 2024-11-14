@@ -1,7 +1,7 @@
 ---
 title: ChatGPT 使用之旅
 publishedAt: 2023-03-04T00:02:34.000Z
-category: Code
+category: Life
 lang: zh
 summary: >-
   AI 是怎么进入我的生活
