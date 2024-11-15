@@ -25,10 +25,10 @@ const { label, title } = Astro.props
           src={Avatar}
         />
       </a>
-      <button aria-label="Scroll to Top" class="transition-duration-500 transition-delay-300 -z-50 grow py-2 font-bold opacity-0 transition-opacity" id="header-title">
-        <h1>
+      <button aria-label="Scroll to Top" class="grow py-2 font-bold opacity-0 transition-opacity transition-duration-500 transition-delay-300 -z-50" id="header-title">
+        <span>
           {title ?? 'Hi, Xat!'}
-        </h1>
+        </span>
       </button>
       <ThemeToggle id="theme-toggle" />
     </nav>
