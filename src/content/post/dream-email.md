@@ -2,11 +2,9 @@
 title: 愉悦地配置域名邮箱
 publishedAt: 2024-11-14T00:00:00.000Z
 category: Code
-lang: zh
 summary: >-
   Cloudflare + Resend + Gmail + Apple Mail，舒服了。
 slug: dream-email
-cover: ""
 tags:
   - Email
 ---
@@ -90,10 +88,8 @@ Cloudflare 提供了免费的 [邮件转发服务](https://www.cloudflare.com/de
 ### Gmail 配置 SMTP
 
 1. 在 Gmail 设置里找到 `Accounts and Import`，在 `Send mail as` 里选择 `Add another email address`
-
 ![Gmail Send mail as](/image/dream-email/gmail-send-as.png)
 2. SMTP 信息填 Resend 给出的 [地址和端口](https://resend.com/docs/send-with-smtp#smtp-credentials)，密码则是你的 Resend API Key
-
 ![Gmail SMTP](/image/dream-email/gmail-smtp.png)
 3. 点击 `Next`，Gmail 会给你发送一封验证邮件，验证后就可以使用了，你也可以在 `Accounts and Import` 里设置其默认发送邮箱
 
@@ -106,22 +102,16 @@ Cloudflare 提供了免费的 [邮件转发服务](https://www.cloudflare.com/de
 接下来把域名邮箱配置到 Apple Mail 中吧。
 
 1. 首先要在 Google Account 里 [添加 App Password](https://myaccount.google.com/apppasswords)，这个密码是用来**在 Apple Mail 中登录 Gmail** 的。
-
 ![Google App Password](/image/dream-email/google-app-pwd.png)
 2. 在 Apple Mail 中添加账户，选择 `Other Mail Account`，填写你的域名邮箱，密码随意填写即可，这里只是触发编辑 SMTP 的界面。
-
 ![Apple Mail 1](/image/dream-email/mail-1.png)
 3. 在 SMTP 编辑界面，IMAP 服务器填写 `imap.gmail.com`，SMTP 服务器填写 `smtp.resend.com`，用户名和密码填写你的 Gmail 地址和生成的 App Password 或是 `resend` 和 API Key，任选一套组合即可。
-
 ![Apple Mail 2](/image/dream-email/mail-2.png)
 4. 保存后，你还需要为 IMAP 和 SMTP 分别设置不同的账户与密码，进入 Apple Mail 设置，账户，IMAP 使用 Gmail 地址和生成的 App Password，SMTP 使用 `resend` 和 API Key。
-
 ![Apple Mail 3](/image/dream-email/mail-3.png)
 5. 即将完成啦，但还有一步，你要在 `Advanced IMAP Settings` 的 `IMAP Path Prefix` 里填上 `[Gmail]`，这样 Apple Mail 才能正确识别 Gmail 的文件夹。
-
 ![Apple Mail 4](/image/dream-email/mail-4.png)
 6. 最后别忘了点右下角的 `Save`，然后就可以愉快地使用域名邮箱啦。
-
 ![Final](/image/dream-email/final.png)
 
 ## 4. Conclusion

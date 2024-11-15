@@ -2,11 +2,9 @@
 title: ChatGPT 使用之旅
 publishedAt: 2023-03-04T00:00:00.000Z
 category: Life
-lang: zh
 summary: >-
   AI 是怎么进入我的生活
 slug: chatgpt-for-me
-cover: ""
 tags:
   - ChatGPT
   - AI
