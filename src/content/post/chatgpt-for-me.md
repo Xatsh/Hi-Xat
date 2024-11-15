@@ -1,6 +1,6 @@
 ---
 title: ChatGPT 使用之旅
-publishedAt: 2023-03-04T00:02:34.000Z
+publishedAt: 2023-03-04T00:00:00.000Z
 category: Life
 lang: zh
 summary: >-
