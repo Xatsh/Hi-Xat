@@ -7,13 +7,14 @@ interface Props {
   category: Categories
   description: string
   publishedAt: Date
+  tags: string[]
   title: string
 }
 
-const { category, description, title } = Astro.props
+const { category, description, tags, title } = Astro.props
 ---
 
-<Layout description={description} label={category} title={title}>
+<Layout description={description} keywords={tags} label={category} revisitAfter="180 days" title={title}>
   <article
     class="max-w-none xat-typo prose prose-truegray dark:prose-invert"
   >

@@ -5,7 +5,6 @@ import { ViewTransitions } from 'astro:transitions'
 
 import Footer from '@/components/ui/footer.astro'
 import Header from '@/components/ui/header.astro'
-import Intro from '@/components/ui/intro.astro'
 import Meta from '@/components/ui/meta.astro'
 
 import '@/assets/style/misans-regular.css'
@@ -15,17 +14,25 @@ import '@/assets/style/cursors.css'
 
 interface Props {
   description?: string
+  keywords?: string[]
   label?: Categories
+  revisitAfter?: string
   title?: string
 }
 
-const { description = '✨ Coding with Love, Exploring the World.', label, title } = Astro.props
+const {
+  description = '✨ Coding with Love, Exploring the World.',
+  keywords = ['Code', 'Design', 'Life', 'Frontend', 'React', 'TypeScript', 'ESLint', 'Blog', 'Cute', 'Cat'],
+  label,
+  revisitAfter = '7 days',
+  title,
+} = Astro.props
 ---
 
 <!doctype html>
 <html class="xat-html" lang="en">
   <head>
-    <Meta description={description} />
+    <Meta description={description} keywords={keywords} revisitAfter={revisitAfter} />
     <ViewTransitions />
     <title>{title ? `${title} | Xat` : 'Hi, Xat!'}</title>
   </head>
