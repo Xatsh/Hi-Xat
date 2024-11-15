@@ -17,6 +17,9 @@
     "lint": "eslint .",
     "lint:fix": "eslint --fix ."
   },
+  "dependencies": {
+    "@astrojs/sitemap": "^3.2.1"
+  },
   "devDependencies": {
     "@astrojs/rss": "^4.0.9",
     "@iconify-json/mingcute": "^1.2.1",
