@@ -1,1 +1,1 @@
-export type Categories = 'Code' | 'Design' | 'Life'
+export type Categories = "Code" | "Design" | "Life"

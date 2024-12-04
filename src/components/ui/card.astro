@@ -1,38 +1,33 @@
 ---
-import type { Categories } from '@/types'
+import type { Categories } from "@/types"
 
 interface Props {
-  description: string
-  label: Categories
-  showRedirect?: boolean
-  title: string
-  url: string
+	description: string
+	label: Categories
+	showRedirect?: boolean
+	title: string
+	url: string
 }
 
 const { description, label, showRedirect, title, url } = Astro.props
 
 enum CategoryIcons {
-  Code = 'i-mingcute-code-line',
-  Design = 'i-mingcute-paint-brush-line',
-  Life = 'i-mingcute-gift-line',
+	Code = "i-mingcute-code-line",
+	Design = "i-mingcute-paint-brush-line",
+	Life = "i-mingcute-gift-line",
 }
 ---
-<a href={url} target={showRedirect ? '_blank' : '_self'}>
-  <div class="flex items-center justify-between overflow-hidden border border-decoration rounded-xl p-3 shadow-sm transition-colors transition-shadow hover:border-primary hover:shadow-lg">
-    <div class="flex flex-col gap-1">
-      <span class="flex items-center gap-1 xat-typo text-xs text-primary">
-        <span class=`${CategoryIcons[label]}`></span>
-        {label}
-      </span>
-      <h4 class="xat-typo">
-        {title}
-      </h4>
-      <p class="xat-typo text-sm text-mute">
-        {description}
-      </p>
-    </div>
-    {showRedirect && (
-      <span class="i-mingcute-external-link-line shrink-0 grow-0 text-decoration"></span>
-    )}
-  </div>
+<a href={url} target={showRedirect ? "_blank" : "_self"}>
+	<div class="w-full flex flex flex-col gap-1 overflow-hidden border border-decoration rounded-xl p-3 shadow-sm transition-colors transition-shadow hover:border-primary hover:shadow-lg">
+		<span class="flex items-center gap-1 xat-typo text-sm text-primary">
+			<span class=`${CategoryIcons[label]}`></span>
+			{label}
+		</span>
+		<h4 class="xat-typo">
+			{title}
+		</h4>
+		<p class="xat-typo text-sm text-mute">
+			{description}
+		</p>
+	</div>
 </a>

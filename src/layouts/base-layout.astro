@@ -1,48 +1,48 @@
 ---
-import type { Categories } from '@/types'
+import type { Categories } from "@/types"
 
-import { ViewTransitions } from 'astro:transitions'
+import ClientRouter from "astro/components/ClientRouter.astro"
 
-import Footer from '@/components/ui/footer.astro'
-import Header from '@/components/ui/header.astro'
-import Meta from '@/components/ui/meta.astro'
+import Footer from "@/components/ui/footer.astro"
+import Header from "@/components/ui/header.astro"
+import Meta from "@/components/ui/meta.astro"
 
-import '@/assets/style/misans-regular.css'
-import '@/assets/style/misans-bold.css'
-import '@/assets/style/colors.css'
-import '@/assets/style/cursors.css'
+import "@/assets/style/misans-regular.css"
+import "@/assets/style/misans-bold.css"
+import "@/assets/style/colors.css"
+import "@/assets/style/cursors.css"
 
 interface Props {
-  description?: string
-  keywords?: string[]
-  label?: Categories
-  revisitAfter?: string
-  title?: string
+	description?: string
+	keywords?: string[]
+	label?: Categories
+	revisitAfter?: string
+	title?: string
 }
 
 const {
-  description = '✨ Coding with Love, Exploring the World.',
-  keywords = ['Code', 'Design', 'Life', 'Frontend', 'React', 'TypeScript', 'ESLint', 'Blog', 'Cute', 'Cat', 'Xat', 'Coding', 'Love', 'Exploring', 'World'],
-  label,
-  revisitAfter = '7 days',
-  title,
+	description = "✨ Coding with Love, Exploring the World.",
+	keywords = ["Code", "Design", "Life", "Frontend", "React", "TypeScript", "ESLint", "Blog", "Cute", "Cat", "Xat", "Coding", "Love", "Exploring", "World"],
+	label,
+	revisitAfter = "7 days",
+	title,
 } = Astro.props
 ---
 
 <!doctype html>
 <html class="xat-html" lang="en">
-  <head>
-    <Meta description={description} keywords={keywords} revisitAfter={revisitAfter} />
-    <ViewTransitions />
-    <title>{title ? `${title} | Xat` : 'Hi, Xat!'}</title>
-  </head>
-  <body class="min-h-screen flex flex-col items-center justify-evenly bg-secondary text-major font-sans selection:bg-primary selection:text-atom">
-    <Header label={label} title={title} />
-    <main class="flex grow flex-col gap-8 rounded-2xl bg-atom shadow-sm xat-container" transition:name="content">
-      <slot />
-    </main>
-    <Footer />
-  </body>
+	<head>
+		<Meta description={description} keywords={keywords} revisitAfter={revisitAfter} />
+		<ClientRouter />
+		<title>{title ? `${title} | Xat` : "Hi, Xat!"}</title>
+	</head>
+	<body class="selection:bg-primary selection:text-atom min-h-screen flex flex-col items-center justify-evenly bg-secondary text-major font-sans">
+		<Header label={label} title={title} />
+		<main class="flex grow flex-col gap-4 rounded-2xl bg-atom shadow-sm xat-container" transition:name="content">
+			<slot />
+		</main>
+		<Footer />
+	</body>
 </html>
 
 <script is:inline>

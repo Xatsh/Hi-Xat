@@ -1,23 +1,23 @@
 ---
-import type { Categories } from '@/types'
+import type { Categories } from "@/types"
 
-import Layout from '@/layouts/base-layout.astro'
+import Layout from "@/layouts/base-layout.astro"
 
 interface Props {
-  category: Categories
-  description: string
-  publishedAt: Date
-  tags: string[]
-  title: string
+	category: Categories
+	description: string
+	publishedAt: Date
+	tags: string[]
+	title: string
 }
 
 const { category, description, tags, title } = Astro.props
 ---
 
 <Layout description={description} keywords={tags} label={category} revisitAfter="180 days" title={title}>
-  <article
-    class="max-w-none xat-typo prose prose-truegray dark:prose-invert"
-  >
-    <slot />
-  </article>
+	<article
+		class="max-w-none xat-typo prose prose-truegray dark:prose-invert"
+	>
+		<slot />
+	</article>
 </Layout>

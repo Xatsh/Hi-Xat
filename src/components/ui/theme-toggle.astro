@@ -1,23 +1,22 @@
 ---
-import { cn } from '@/utils'
 
 interface Props {
-  id?: string
+	id?: string
 }
 
-const { id = 'theme-toggle' } = Astro.props
+const { id = "theme-toggle" } = Astro.props
 ---
 
 
-<button aria-label="Theme Toggle" class="size-10 flex items-center justify-center border border-decoration rounded-full text-lg shadow transition-colors hover:border-primary hover:text-primary" id={id}>
-  <span class="i-mingcute-sun-line dark:i-mingcute-moon-line"></span>
+<button aria-label="Theme Toggle" class="size-10 flex items-center justify-center rounded-full text-2xl" id={id}>
+	<span class="i-mingcute-sun-line dark:i-mingcute-moon-line"></span>
 </button>
 
 <script
-  define:vars={{
-    id,
-  }}
-  is:inline
+	define:vars={{
+		id,
+	}}
+	is:inline
 >
     const handleToggle = () => {
     const element = document.documentElement

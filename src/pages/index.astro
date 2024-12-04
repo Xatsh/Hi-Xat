@@ -1,23 +1,23 @@
 ---
-import { getCollection } from 'astro:content'
+import { getCollection } from "astro:content"
 
-import Card from '@/components/ui/card.astro'
-import Layout from '@/layouts/base-layout.astro'
+import Card from "@/components/ui/card.astro"
+import Layout from "@/layouts/base-layout.astro"
 
-const posts = await getCollection('post')
+const posts = await getCollection("post")
 ---
 <Layout>
-  <h3 class="text-lg font-bold capitalize">recently published</h3>
-  <div class="grid gap-4 tablet:grid-cols-2">
-    {
-      posts.map(({ data: metaData, slug }) => (
-        <Card
-          description={metaData.summary}
-          label={metaData.category}
-          title={metaData.title}
-          url={`/post/${slug}`}
-        />
-      ))
-    }
-  </div>
+	<h3 class="text-lg font-bold capitalize">recently published</h3>
+	<div class="grid gap-2 tablet:grid-cols-2">
+		{
+			posts.map(({ data: metaData, slug }) => (
+				<Card
+					description={metaData.summary}
+					label={metaData.category}
+					title={metaData.title}
+					url={`/post/${slug}`}
+				/>
+			))
+		}
+	</div>
 </Layout>

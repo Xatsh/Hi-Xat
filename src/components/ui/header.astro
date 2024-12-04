@@ -1,39 +1,39 @@
 ---
-import type { Categories } from '@/types'
+import type { Categories } from "@/types"
 
-import { Image } from 'astro:assets'
+import { Image } from "astro:assets"
 
-import Avatar from '@/assets/image/avatar.webp'
-import Intro from '@/components/ui/intro.astro'
-import ThemeToggle from '@/components/ui/theme-toggle.astro'
+import Avatar from "@/assets/image/avatar.webp"
+import Intro from "@/components/ui/intro.astro"
+import ThemeToggle from "@/components/ui/theme-toggle.astro"
 
 interface Props {
-  label?: Categories
-  title?: string
+	label?: Categories
+	title?: string
 }
 
 const { label, title } = Astro.props
 ---
 <>
-  <header class="xat-header sticky top-0 z-100 backdrop-blur" transition:name="header">
-    <nav class="flex items-center justify-between">
-      <a href="/">
-        <Image
-          alt="Avatar"
-          class="size-10 border border-decoration rounded-full shadow transition-colors hover:border-primary"
-          loading="eager"
-          src={Avatar}
-        />
-      </a>
-      <button aria-label="Scroll to Top" class="grow py-2 font-bold opacity-0 transition-opacity transition-duration-500 transition-delay-300 -z-50" id="header-title">
-        <span>
-          {title ?? 'Hi, Xat!'}
-        </span>
-      </button>
-      <ThemeToggle id="theme-toggle" />
-    </nav>
-  </header>
-  <Intro label={label} title={title} />
+	<header class="xat-header sticky top-0 z-100 backdrop-blur" transition:name="header">
+		<nav class="flex items-center justify-between">
+			<a href="/">
+				<Image
+					alt="Avatar"
+					class="size-10 rounded-full"
+					loading="eager"
+					src={Avatar}
+				/>
+			</a>
+			<button aria-label="Scroll to Top" class="grow py-2 font-bold opacity-0 transition-opacity transition-duration-500 transition-delay-300 -z-50" id="header-title">
+				<span>
+					{title ?? "Hi, Xat!"}
+				</span>
+			</button>
+			<ThemeToggle id="theme-toggle" />
+		</nav>
+	</header>
+	<Intro label={label} title={title} />
 </>
 
 <style>

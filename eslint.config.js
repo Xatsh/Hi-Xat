@@ -1,3 +1,3 @@
-import { xat } from '@xats/eslint-config'
+import { xat } from "@xats/eslint-config"
 
 export default xat({})

@@ -1,8 +1,8 @@
 ---
 interface Props {
-  description: string
-  keywords: string[]
-  revisitAfter: string
+	description: string
+	keywords: string[]
+	revisitAfter: string
 }
 
 const { description, keywords, revisitAfter } = Astro.props
@@ -10,24 +10,24 @@ const { description, keywords, revisitAfter } = Astro.props
 
 <meta charset="UTF-8" />
 <meta
-  content={description}
-  name="description"
+	content={description}
+	name="description"
 />
 <meta
-  content="width=device-width, initial-scale=1.0"
-  name="viewport"
+	content="width=device-width, initial-scale=1.0"
+	name="viewport"
 />
 <meta content={revisitAfter} name="revisit-after" />
 <meta content="Xat" name="author" />
-<meta content={keywords.join(', ')} name="keywords" />
+<meta content={keywords.join(", ")} name="keywords" />
 <meta
-  content={Astro.generator}
-  name="generator"
+	content={Astro.generator}
+	name="generator"
 />
 <link href="/sitemap-index.xml" rel="sitemap" />
 <link
-  href="/favicon.svg"
-  rel="icon"
-  type="image/svg+xml"
+	href="/favicon.svg"
+	rel="icon"
+	type="image/svg+xml"
 />
 
