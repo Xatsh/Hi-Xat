@@ -6,15 +6,14 @@ import Layout from "@/layouts/base-layout.astro"
 interface Props {
 	category: Categories
 	description: string
-	publishedAt: Date
-	tags: string[]
+	publishedAt: string
 	title: string
 }
 
-const { category, description, tags, title } = Astro.props
+const { category, description, publishedAt, title } = Astro.props
 ---
 
-<Layout description={description} keywords={tags} label={category} revisitAfter="180 days" title={title}>
+<Layout description={description} label={category} publishedAt={publishedAt} revisitAfter="180 days" title={title}>
 	<article
 		class="max-w-none xat-typo prose prose-truegray dark:prose-invert"
 	>

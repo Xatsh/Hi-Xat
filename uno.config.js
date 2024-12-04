@@ -35,7 +35,7 @@ export default {
 		}),
 	],
 	shortcuts: {
-		"xat-container": "w-full tablet:w-4/7 p-6",
+		"xat-container": "w-full tablet:w-4/7 desktop:w-1/3 p-6",
 		"xat-typo": "text-wrap break-words",
 	},
 	theme: {

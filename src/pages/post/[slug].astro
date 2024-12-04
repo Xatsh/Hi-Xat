@@ -2,6 +2,7 @@
 import { getCollection, getEntry } from "astro:content"
 
 import PostLayout from "@/layouts/post-layout.astro"
+import { dateFormatter } from "@/utils"
 
 export async function getStaticPaths() {
 	const posts = await getCollection("post")
@@ -11,9 +12,12 @@ export async function getStaticPaths() {
 
 const { slug } = Astro.params
 const post = await getEntry("post", slug)
+if (!post) {
+	return { status: 404 }
+}
 const metaData = post.data
 const { Content } = await post.render()
 ---
-<PostLayout category={metaData.category} description={metaData.summary} publishedAt={metaData.publishedAt} tags={metaData.tags ?? []} title={metaData.title}>
+<PostLayout category={metaData.category} description={metaData.summary} publishedAt={dateFormatter(metaData.publishedAt)} title={metaData.title}>
 	<Content />
 </PostLayout>

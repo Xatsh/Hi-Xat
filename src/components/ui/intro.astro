@@ -2,11 +2,12 @@
 import type { Categories } from "@/types"
 
 interface Props {
+	date?: string
 	label?: Categories
 	title?: string
 }
 
-const { label, title } = Astro.props
+const { date, label, title } = Astro.props
 
 enum CategoryIcons {
 	Code = "i-mingcute-code-line",
@@ -18,7 +19,7 @@ enum CategoryIcons {
 	class="relative flex flex-col gap-2 pt-0 xat-container"
 	id="intro"
 >
-	<span class="flex items-center gap-2 text-lg text-primary">
+	<span class="flex items-center gap-2 text-primary">
 		<span class=`${label ? CategoryIcons[label] : "i-mingcute-sparkles-2-fill text-5xl"}` transition:name="logo" />
 		{label ?? ""}
 	</span>
@@ -26,17 +27,38 @@ enum CategoryIcons {
 		title
 			? (
 				<h2 class="text-3xl font-bold" id="title" transition:name="title">{title}</h2>
+        <span class="font-serif" transition:name="tag">{date}</span>
 			)
 			: (
 				<h2 class="text-3xl font-bold" id="title" transition:name="title">Coding with Love, Exploring the World.</h2>
-				<nav class="flex items-center gap-6 text-2xl">
-					<a aria-label="GitHub" href="https://github.com/xatloon" target="_blank"><span class="i-mingcute-github-fill transition-colors hover:text-primary"></span></a>
-					<a aria-label="Twitter/X" href="https://x.com/xatloon" target="_blank"><span class="i-mingcute-social-x-fill transition-colors hover:text-primary"></span></a>
-					<a aria-label="Telegram" href="https://t.me/xatloon" target="_blank"><span class="i-mingcute-telegram-fill transition-colors hover:text-primary"></span></a>
+				<nav class="flex items-center gap-6 text-2xl" transition:name="tag">
+					<a aria-label="GitHub" href="https://github.com/xatsh" target="_blank"><span class="i-mingcute-github-fill transition-colors hover:text-primary"></span></a>
+					<a aria-label="Twitter/X" href="https://x.com/xat_0w0" target="_blank"><span class="i-mingcute-social-x-fill transition-colors hover:text-primary"></span></a>
+					<a aria-label="Telegram" href="https://t.me/xat_0w0" target="_blank"><span class="i-mingcute-telegram-fill transition-colors hover:text-primary"></span></a>
 					<a aria-label="RSS" href="/rss.xml" target="_blank"><span class="i-mingcute-rss-fill transition-colors hover:text-primary"></span></a>
 				</nav>
 			)
 	}
 </section>
 
-
+<script is:inline>
+    // Intro Observer
+    const headerToggleObserver = new IntersectionObserver(
+    ([entry]) => {
+      if (entry.intersectionRatio > 0) {
+        document.getElementById('header-title').classList.remove('opacity-100', 'z-50')
+        document.getElementById('header-title').classList.add('opacity-0', '-z-50')
+      } else {
+        document.getElementById('header-title').classList.add('opacity-100', 'z-50')
+        document.getElementById('header-title').classList.remove('opacity-0', '-z-50')
+      }
+    },
+  )
+  headerToggleObserver.observe(document.getElementById('intro'))
+  document.addEventListener('astro:before-swap', () => {
+    headerToggleObserver.unobserve(document.getElementById('intro'))
+  })
+  document.addEventListener('astro:after-swap', () => {
+    headerToggleObserver.observe(document.getElementById('intro'))
+  })
+</script>
